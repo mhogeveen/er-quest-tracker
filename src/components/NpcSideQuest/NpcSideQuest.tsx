@@ -26,24 +26,30 @@ export const NpcSideQuest = ({ data, isOpen = true }: NpcSideQuestProps) => {
       <summary className={styles.summary}>
         <h2 className={styles.title}>{data.name}</h2>
         <a href={data.link} target="_blank" className={styles.link}>
-          <IconExternalLink />
+          <IconExternalLink size={20} />
         </a>
         <p className={styles.description}>{data.description}</p>
         <i className={styles.chevron}>
-          {open ? <IconChevronUp /> : <IconChevronDown />}
+          {open ? (
+            <IconChevronUp size={20} />
+          ) : (
+            <IconChevronDown size={20} />
+          )}
         </i>
       </summary>
-      {data.image && (
-        <div
-          style={{
-            position: 'relative',
-            width: '300px',
-            aspectRatio: '16 / 9',
-          }}
-        >
-          <Image src={data.image.src} alt={data.image.alt} fill />
-        </div>
-      )}
+      <div className={styles.content}>
+        {data.image && (
+          <div
+            style={{
+              position: 'relative',
+              width: '300px',
+              aspectRatio: '16 / 9',
+            }}
+          >
+            <Image src={data.image.src} alt={data.image.alt} fill />
+          </div>
+        )}
+      </div>
     </details>
   )
 }

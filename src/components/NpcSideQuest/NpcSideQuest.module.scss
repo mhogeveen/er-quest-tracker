@@ -1,12 +1,29 @@
 .details {
-    border: 1px solid black;
+    border: 1px solid var(--grey-200);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    transition: border-color var(--transition-duration) ease-in-out;
+
+    &:hover {
+        border-color: var(--grey-400);
+    }
 }
 
 .summary {
+    --icon-size: 40px;
     list-style: none;
     display: grid;
     grid-template-areas: 'checkbox title link chevron' '. description description description';
-    grid-template-columns: 50px 1fr 50px 50px;
+    grid-template-columns: var(--icon-size) 1fr var(--icon-size) var(
+            --icon-size
+        );
+    cursor: pointer;
+}
+
+.content {
+    padding-top: var(--spacing);
+    margin-top: var(--spacing);
+    border-top: 1px solid var(--grey-200);
 }
 
 .checkbox {
@@ -19,10 +36,35 @@
 }
 
 .link {
+    display: grid;
+    place-items: center;
+    height: calc(var(--icon-size) - var(--spacing));
+    width: calc(var(--icon-size) - var(--spacing));
+    margin: calc(var(--spacing) / 2);
     grid-area: link;
+    border-radius: var(--border-radius);
+    outline: calc(var(--spacing) / 4) solid transparent;
+    transition: background-color var(--transition-duration) ease-in-out,
+        outline-color var(--transition-duration) ease-in-out;
+
+    &:focus-visible,
+    &:active,
+    &:hover {
+        background-color: var(--grey-100);
+    }
+
+    &:focus-visible,
+    &:active {
+        outline-color: var(--grey-200);
+    }
 }
 
 .chevron {
+    display: grid;
+    place-items: center;
+    height: calc(var(--icon-size) - var(--spacing));
+    width: calc(var(--icon-size) - var(--spacing));
+    margin: calc(var(--spacing) / 2);
     grid-area: chevron;
 }
 
