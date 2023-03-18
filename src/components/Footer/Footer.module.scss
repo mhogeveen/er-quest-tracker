@@ -1,0 +1,14 @@
+.footer {
+    height: 50px;
+    display: grid;
+    place-items: center;
+}
+
+.icon {
+    stroke: var(--grey-300);
+    transition: stroke var(--transition-duration) ease-in-out;
+
+    &:hover {
+        stroke: var(--grey-500);
+    }
+}

@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 import styles from './Layout.module.scss'
 import { Header } from '../Header'
+import { Footer } from '../Footer'
 import Head from 'next/head'
 import { Container } from '../Container'
 
@@ -25,7 +26,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <main className={styles.main}>
         <Container>{children}</Container>
       </main>
-      <footer>Footer</footer>
+      <Footer />
     </>
   )
 }
