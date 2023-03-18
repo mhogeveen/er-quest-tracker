@@ -8,3 +8,19 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.title {
+    font-size: 1.5em;
+
+    @media ($sm-up) {
+        font-size: 2em;
+    }
+
+    & > span {
+        display: none;
+
+        @media ($sm-up) {
+            display: initial;
+        }
+    }
+}

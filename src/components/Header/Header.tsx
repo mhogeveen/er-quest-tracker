@@ -9,7 +9,9 @@ export const Header = ({ }: HeaderProps) => {
     <header className={styles.header}>
       <Container>
         <div className={styles.wrapper}>
-          <h1>Elden Ring Quest Tracker</h1>
+          <h1 className={styles.title}>
+            E<span>lden </span>R<span>ing</span> Quest Tracker
+          </h1>
           <button>
             <IconMenu size={20} />
           </button>
