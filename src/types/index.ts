@@ -2,9 +2,10 @@ export type Npc = {
   id: string
   name: string
   description: string
+  link: string
   image?: {
-    src?: string
-    alt?: string
+    src: string
+    alt: string
   }
   rewards: Reward[]
   steps: Step[]
