@@ -5,6 +5,7 @@ import {
   IconExternalLink,
 } from '@tabler/icons-react'
 import { ReactEventHandler, useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 import styles from './NpcSideQuest.module.scss'
 import { Checkbox } from '../Checkbox'
 
@@ -40,7 +41,37 @@ export const NpcSideQuest = ({ data, isOpen = true }: NpcSideQuestProps) => {
           )}
         </i>
       </summary>
-      <div className={styles.content}></div>
+      <div className={styles.content}>
+        {!!data.failureCondition?.length && (
+          <>
+            <h3>Failure conditions</h3>
+            <ul>
+              {data.failureCondition.map((condition, index) => (
+                <li key={index}>
+                  <ReactMarkdown>{condition}</ReactMarkdown>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+        {!!data.rewards?.length && (
+          <>
+            <h3>Rewards</h3>
+            <ul>
+              {data.rewards.map((reward) => (
+                <li key={reward.id}>
+                  {`x${reward.amount} - `}
+                  <a
+                    href={reward.link}
+                    target="_blank"
+                  >{`${reward.name}`}</a>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+        <h3>Steps</h3>
+      </div>
     </details>
   )
 }

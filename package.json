@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@types/uuid": "^9.0.1",
-    "clsx": "^1.2.1"
+    "clsx": "^1.2.1",
+    "react-markdown": "^8.0.5"
   }
 }
