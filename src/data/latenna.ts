@@ -30,5 +30,7 @@ export const latenna: Npc = {
     },
   ],
   steps: [],
-  failureCondition: [],
+  failureCondition: [
+    'Obtaining both pieces of the Haligtree Secret Medallion ([Left](https://eldenring.wiki.fextralife.com/Haligtree+Secret+Medallion+(Left)) & [Right](https://eldenring.wiki.fextralife.com/Haligtree+Secret+Medallion+(Right))) before meeting her.',
+  ],
 }
