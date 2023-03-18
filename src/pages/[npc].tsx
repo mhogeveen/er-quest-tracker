@@ -2,13 +2,21 @@ import { NpcSideQuest } from '@src/components'
 import { npcs } from '@src/data'
 import { Npc } from '@src/types'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import Head from 'next/head'
 
 type PageProps = {
   data: Npc
 }
 
 export default function Page({ data }: PageProps) {
-  return <NpcSideQuest data={data} />
+  return (
+    <>
+      <Head>
+        <title>{`${data.name} / Elden Ring Quest Tracker`}</title>
+      </Head>
+      <NpcSideQuest data={data} />
+    </>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
