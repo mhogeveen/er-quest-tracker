@@ -1,0 +1,8 @@
+@mixin container {
+    max-width: 100ch;
+    margin: 0 auto;
+}
+
+.main {
+    @include container;
+}
