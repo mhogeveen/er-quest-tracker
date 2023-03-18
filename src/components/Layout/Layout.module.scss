@@ -1,9 +1,16 @@
 @mixin container {
+    width: 100%;
     max-width: 100ch;
     margin: 0 auto;
+}
+
+.header {
 }
 
 .main {
     @include container;
     padding-inline: calc(var(--spacing) * 2);
+}
+
+.footer {
 }

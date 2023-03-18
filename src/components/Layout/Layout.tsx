@@ -6,9 +6,9 @@ type LayoutProps = PropsWithChildren
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <header>Header</header>
+      <header className={styles.header}>Header</header>
       <main className={styles.main}>{children}</main>
-      <footer>Footer</footer>
+      <footer className={styles.footer}>Footer</footer>
     </>
   )
 }
