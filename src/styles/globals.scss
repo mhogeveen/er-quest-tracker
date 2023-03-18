@@ -15,7 +15,10 @@
     --grey-900: #111827;
 }
 
-* {
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     font-family: var(--font-family);
     color: var(--grey-900);
 }

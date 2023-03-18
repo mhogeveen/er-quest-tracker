@@ -4,13 +4,7 @@
     margin: 0 auto;
 }
 
-.header {
-}
-
 .main {
     @include container;
     padding-inline: calc(var(--spacing) * 2);
-}
-
-.footer {
 }
