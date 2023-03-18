@@ -4,13 +4,13 @@ import { Npc } from '@src/types'
 import { GetStaticProps } from 'next'
 
 type PageProps = {
-  data: Npc[]
+  npcsData: Npc[]
 }
 
-export default function Home({ data }: PageProps) {
+export default function Home({ npcsData }: PageProps) {
   return (
     <>
-      {data.map((npc) => (
+      {npcsData.map((npc) => (
         <NpcSideQuest key={npc.id} data={npc} />
       ))}
     </>
@@ -19,6 +19,6 @@ export default function Home({ data }: PageProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: { data: npcs },
+    props: { npcsData: npcs },
   }
 }

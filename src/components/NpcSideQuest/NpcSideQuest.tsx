@@ -14,7 +14,7 @@ type NpcSideQuestProps = {
   isOpen?: boolean
 }
 
-export const NpcSideQuest = ({ data, isOpen = true }: NpcSideQuestProps) => {
+export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
   const [open, setOpen] = useState(isOpen)
 
   const handleToggle: ReactEventHandler<HTMLDetailsElement> = (e) => {

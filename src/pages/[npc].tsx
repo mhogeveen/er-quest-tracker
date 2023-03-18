@@ -5,16 +5,16 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 
 type PageProps = {
-  data: Npc
+  npcData: Npc
 }
 
-export default function Page({ data }: PageProps) {
+export default function Page({ npcData }: PageProps) {
   return (
     <>
       <Head>
-        <title>{`${data.name} / Elden Ring Quest Tracker`}</title>
+        <title>{`${npcData.name} / Elden Ring Quest Tracker`}</title>
       </Head>
-      <NpcSideQuest data={data} />
+      <NpcSideQuest data={npcData} isOpen={true} />
     </>
   )
 }
@@ -29,9 +29,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const data = npcs.find((npc) => npc.id === context?.params?.npc)
+  const npcData = npcs.find((npc) => npc.id === context?.params?.npc)
 
   return {
-    props: { data },
+    props: { npcData, npcsData: npcs },
   }
 }

@@ -1,15 +1,27 @@
 .header {
+    --icon-size: 40px;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid var(--grey-200);
-    padding: var(--spacing) 0;
+    height: 50px;
+    position: relative;
+    z-index: 50;
 }
 
 .wrapper {
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    grid-template-columns: 1fr var(--icon-size) var(--icon-size);
+}
+
+.link {
+    text-decoration: none;
 }
 
 .title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-size: 1.5em;
 
     @media ($sm-up) {
@@ -22,5 +34,51 @@
         @media ($sm-up) {
             display: initial;
         }
+    }
+}
+
+.button {
+    display: grid;
+    place-items: center;
+    height: calc(var(--icon-size) - var(--spacing));
+    width: calc(var(--icon-size) - var(--spacing));
+    margin: calc(var(--spacing) / 2);
+    border-radius: var(--border-radius);
+    outline: calc(var(--spacing) / 4) solid transparent;
+    outline-offset: 0;
+    transition: background-color var(--transition-duration) ease-in-out,
+        outline-color var(--transition-duration) ease-in-out;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus-visible,
+    &:active,
+    &:hover {
+        background-color: var(--grey-100);
+    }
+
+    &:focus-visible,
+    &:active {
+        outline-color: var(--grey-200);
+    }
+}
+
+.nav {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--grey-200);
+    visibility: var(--nav-visibility, hidden);
+    opacity: var(--nav-opacity, 0);
+    transition: visibility var(--transition-duration) ease-in-out,
+        opacity var(--transition-duration) ease-in-out;
+
+    &.visible {
+        --nav-visibility: visible;
+        --nav-opacity: 1;
     }
 }
