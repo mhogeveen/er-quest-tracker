@@ -1,5 +1,4 @@
 import { Npc } from '@src/types'
-import Image from 'next/image'
 import {
   IconChevronDown,
   IconChevronUp,
@@ -7,6 +6,7 @@ import {
 } from '@tabler/icons-react'
 import { ReactEventHandler, useState } from 'react'
 import styles from './NpcSideQuest.module.scss'
+import { Checkbox } from '../Checkbox'
 
 type NpcSideQuestProps = {
   data: Npc
@@ -24,6 +24,9 @@ export const NpcSideQuest = ({ data, isOpen = true }: NpcSideQuestProps) => {
   return (
     <details open={open} onToggle={handleToggle} className={styles.details}>
       <summary className={styles.summary}>
+        <div className={styles.checkbox}>
+          <Checkbox />
+        </div>
         <h2 className={styles.title}>{data.name}</h2>
         <a href={data.link} target="_blank" className={styles.link}>
           <IconExternalLink size={20} />
@@ -37,19 +40,7 @@ export const NpcSideQuest = ({ data, isOpen = true }: NpcSideQuestProps) => {
           )}
         </i>
       </summary>
-      <div className={styles.content}>
-        {data.image && (
-          <div
-            style={{
-              position: 'relative',
-              width: '300px',
-              aspectRatio: '16 / 9',
-            }}
-          >
-            <Image src={data.image.src} alt={data.image.alt} fill />
-          </div>
-        )}
-      </div>
+      <div className={styles.content}></div>
     </details>
   )
 }

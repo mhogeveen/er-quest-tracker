@@ -2,9 +2,9 @@ import { Layout } from '@src/components'
 import type { AppProps } from 'next/app'
 import 'normalize.css'
 import '@src/styles/globals.scss'
-import { Poppins } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const font = Poppins({
+const font = Inter({
   weight: ['400', '700'],
   subsets: ['latin'],
 })
