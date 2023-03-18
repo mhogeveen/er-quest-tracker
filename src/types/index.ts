@@ -16,8 +16,7 @@ export type Reward = {
   id: string
   name: string
   amount: number
-  description?: string
-  link?: string
+  link: string
 }
 
 export type Step = {

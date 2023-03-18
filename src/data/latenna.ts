@@ -16,16 +16,12 @@ export const latenna: Npc = {
       id: uuid(),
       name: 'Latenna the Albinauric',
       amount: 1,
-      description:
-        'Latenna the Albinauric is a ranged support unit that deals magic damage with a bow.',
       link: 'https://eldenring.wiki.fextralife.com/Latenna+the+Albinauric',
     },
     {
       id: uuid(),
       name: 'Somber Ancient Dragon Smithing Stone',
       amount: 1,
-      description:
-        'Somber Ancient Dragon Smithing Stone strengthens special armaments to +10.',
       link: 'https://eldenring.wiki.fextralife.com/Somber+Ancient+Dragon+Smithing+Stone',
     },
   ],
