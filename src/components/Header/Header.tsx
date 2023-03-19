@@ -4,15 +4,18 @@ import { Container } from '../Container'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { npcs } from '@src/data'
-import { useState } from 'react'
+import { useState, MouseEvent } from 'react'
 
-type HeaderProps = {}
-
-export const Header = ({ }: HeaderProps) => {
+export const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
-  const npcsPaths = npcs.map((npc) => npc.id)
 
   const toggleNav = () => setIsNavOpen((prev) => !prev)
+
+  const handleDropdownClick = (e: MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      toggleNav()
+    }
+  }
 
   return (
     <>
@@ -22,7 +25,11 @@ export const Header = ({ }: HeaderProps) => {
             <h1 className={styles.title}>
               E<span>lden </span>R<span>ing</span> Quest Tracker
             </h1>
-            <Link href="/" className={styles.button}>
+            <Link
+              href="/"
+              className={styles.button}
+              onClick={() => setIsNavOpen(false)}
+            >
               <IconHome size={20} />
             </Link>
             <button className={styles.button} onClick={toggleNav}>
@@ -31,19 +38,27 @@ export const Header = ({ }: HeaderProps) => {
           </div>
         </Container>
 
-        <nav className={clsx(styles.nav, isNavOpen && styles.visible)}>
-          <Container>
-            <ul>
-              {npcsPaths.map((npcPath, i) => (
-                <li key={i}>
-                  <Link href={npcPath} onClick={toggleNav}>
-                    {npcPath}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Container>
-        </nav>
+        <div
+          className={clsx(
+            styles.dropdown,
+            isNavOpen && styles.visible
+          )}
+          onClick={handleDropdownClick}
+        >
+          <nav className={styles.nav}>
+            <Container>
+              <ul className={styles.list}>
+                {npcs.map(({ id, name }) => (
+                  <li key={id}>
+                    <Link href={id} onClick={toggleNav}>
+                      {name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Container>
+          </nav>
+        </div>
       </header>
     </>
   )
