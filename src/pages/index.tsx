@@ -1,5 +1,6 @@
 import { NpcSideQuest } from '@src/components'
 import { npcs } from '@src/data'
+import { useLocalStorage } from '@src/hooks/useLocalStorage'
 import { Npc } from '@src/types'
 import { GetStaticProps } from 'next'
 
@@ -8,6 +9,8 @@ type PageProps = {
 }
 
 export default function Home({ npcsData }: PageProps) {
+  useLocalStorage()
+
   return (
     <>
       {npcsData.map((npc) => (

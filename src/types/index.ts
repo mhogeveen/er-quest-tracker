@@ -20,7 +20,7 @@ export type Reward = {
 }
 
 export type Step = {
-  id: string
+  id: number
   optional: boolean
   description: string
   note?: string
