@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { npcs } from '@src/data'
+import npcs from '@src/data'
 
 type NpcProgress = {
   [key: string]: {

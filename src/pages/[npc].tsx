@@ -1,5 +1,5 @@
 import { NpcSideQuest } from '@src/components'
-import { npcs } from '@src/data'
+import npcs from '@src/data'
 import { Npc } from '@src/types'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
