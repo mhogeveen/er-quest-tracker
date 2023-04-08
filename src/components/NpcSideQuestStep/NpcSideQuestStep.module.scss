@@ -17,10 +17,8 @@
 .summary {
     list-style: none;
     display: grid;
-    grid-template-areas: 'checkbox title link chevron' '. description description description';
-    grid-template-columns: var(--icon-size) 1fr var(--icon-size) var(
-            --icon-size
-        );
+    grid-template-areas: 'checkbox title optional chevron' '. description description description';
+    grid-template-columns: var(--icon-size) 1fr max-content var(--icon-size);
     align-items: center;
     cursor: pointer;
 
@@ -45,6 +43,12 @@
 
 .title {
     grid-area: title;
+}
+
+.optional {
+    grid-area: optional;
+    font-style: italic;
+    font-size: 0.75rem;
 }
 
 .link {
@@ -84,8 +88,4 @@
 .description {
     margin: 0;
     grid-area: description;
-}
-
-.list {
-    margin: 0;
 }

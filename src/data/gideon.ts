@@ -38,7 +38,7 @@ export const gideon: Npc = {
     },
   ],
   steps: [],
-  failureCondition: [
+  failureConditions: [
     'Killing [Maliketh, The Black Blade](https://eldenring.wiki.fextralife.com/Maliketh,+The+Black+Blade) will trigger Gideon to leave the roundtable hold and become a boss',
   ],
 }

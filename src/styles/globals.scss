@@ -2,6 +2,7 @@
     --border-radius: 5px;
     --spacing: 8px;
     --transition-duration: 200ms;
+    --icon-size: 40px;
 
     --white: #ffffff;
     --balck: #000000;
@@ -24,6 +25,7 @@
     box-sizing: border-box;
     font-family: var(--font-family);
     color: var(--grey-900);
+    margin: 0;
 }
 
 #__next {
@@ -34,13 +36,4 @@
     main {
         flex-grow: 1;
     }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
 }

@@ -9,7 +9,7 @@ export type Npc = {
   }
   rewards: Reward[]
   steps: Step[]
-  failureCondition?: string[]
+  failureConditions?: string[]
 }
 
 export type Reward = {

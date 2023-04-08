@@ -8,6 +8,7 @@ import { ReactEventHandler, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styles from './NpcSideQuest.module.scss'
 import { Checkbox } from '../Checkbox'
+import { NpcSideQuestStep } from '../NpcSideQuestStep'
 
 type NpcSideQuestProps = {
   data: Npc
@@ -32,7 +33,11 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
         <a href={data.link} target="_blank" className={styles.link}>
           <IconExternalLink size={20} />
         </a>
-        <p className={styles.description}>{data.description}</p>
+        <p className={styles.description}>
+          <ReactMarkdown linkTarget="_blank">
+            {data.description}
+          </ReactMarkdown>
+        </p>
         <i className={styles.chevron}>
           {open ? (
             <IconChevronUp size={20} />
@@ -42,22 +47,24 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
         </i>
       </summary>
       <div className={styles.content}>
-        {!!data.failureCondition?.length && (
+        {!!data.failureConditions?.length ? (
           <>
             <h3>Failure conditions</h3>
-            <ul>
-              {data.failureCondition.map((condition, index) => (
+            <ul className={styles.list}>
+              {data.failureConditions.map((condition, index) => (
                 <li key={index}>
-                  <ReactMarkdown>{condition}</ReactMarkdown>
+                  <ReactMarkdown linkTarget="_blank">
+                    {condition}
+                  </ReactMarkdown>
                 </li>
               ))}
             </ul>
           </>
-        )}
-        {!!data.rewards?.length && (
+        ) : null}
+        {!!data.rewards?.length ? (
           <>
             <h3>Rewards</h3>
-            <ul>
+            <ul className={styles.list}>
               {data.rewards.map((reward) => (
                 <li key={reward.id}>
                   {`x${reward.amount} - `}
@@ -69,8 +76,21 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
               ))}
             </ul>
           </>
-        )}
-        <h3>Steps</h3>
+        ) : null}
+        {!!data.steps.length ? (
+          <>
+            <h3>Steps</h3>
+            <div>
+              {data.steps.map((step) => (
+                <NpcSideQuestStep
+                  key={step.id}
+                  data={step}
+                  isOpen={true}
+                />
+              ))}
+            </div>
+          </>
+        ) : null}
       </div>
     </details>
   )

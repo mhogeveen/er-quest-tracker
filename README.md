@@ -19,36 +19,36 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Data structures
 
 ```tsx
-type Npc = {
+export type Npc = {
     id: string
     name: string
     description: string
+    link: string
     image?: {
-        src?: string
-        alt?: string
+        src: string
+        alt: string
     }
     rewards: Reward[]
     steps: Step[]
-    failureCondition?: string[]
+    failureConditions?: string[]
 }
 
-type Reward = {
+export type Reward = {
     id: string
     name: string
     amount: number
-    description?: string
-    link?: string
+    link: string
 }
 
-type Step = {
-    id: string
+export type Step = {
+    id: number
     optional: boolean
     description: string
     note?: string
     zone: Zone
 }
 
-enum Zone {
+export enum Zone {
     AINSEL_RIVER = 'Ainsel River',
     ALTUS = 'Altus Plateau',
     CAELID = 'Caelid',
