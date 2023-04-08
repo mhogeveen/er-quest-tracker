@@ -1,5 +1,6 @@
 {
   "name": "er-sidequest-tracker",
+  "packageManager": "pnpm@8.1.1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,7 +15,6 @@
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "eslint": "8.36.0",
-    "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/uuid": "^9.0.1",
     "clsx": "^1.2.1",
+    "eslint-config-next": "13.2.4",
     "react-markdown": "^8.0.5"
   }
 }

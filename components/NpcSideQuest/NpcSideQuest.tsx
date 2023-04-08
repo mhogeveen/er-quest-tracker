@@ -1,13 +1,10 @@
-import { Npc } from '@src/types'
-import {
-  IconChevronDown,
-  IconChevronUp,
-  IconExternalLink,
-} from '@tabler/icons-react'
+'use client'
+import { Npc } from '../../types'
 import { ReactEventHandler, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styles from './NpcSideQuest.module.scss'
 import { Checkbox } from '../Checkbox'
+import Link from 'next/link'
 
 type NpcSideQuestProps = {
   data: Npc
@@ -29,16 +26,16 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
           <Checkbox />
         </div>
         <h2 className={styles.title}>{data.name}</h2>
-        <a href={data.link} target="_blank" className={styles.link}>
-          <IconExternalLink size={20} />
-        </a>
+        <Link href={data.link} target="_blank" className={styles.link}>
+          {/*<IconExternalLink size={20} />*/}
+        </Link>
         <p className={styles.description}>{data.description}</p>
         <i className={styles.chevron}>
-          {open ? (
-            <IconChevronUp size={20} />
+          {/*open ? (
+              <IconChevronUp size={20} />
           ) : (
-            <IconChevronDown size={20} />
-          )}
+              <IconChevronDown size={20} />
+          )*/}
         </i>
       </summary>
       <div className={styles.content}>
@@ -61,10 +58,10 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
               {data.rewards.map((reward) => (
                 <li key={reward.id}>
                   {`x${reward.amount} - `}
-                  <a
+                  <Link
                     href={reward.link}
                     target="_blank"
-                  >{`${reward.name}`}</a>
+                  >{`${reward.name}`}</Link>
                 </li>
               ))}
             </ul>

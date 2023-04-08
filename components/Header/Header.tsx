@@ -1,12 +1,13 @@
+'use client'
 import { IconHome, IconMenu } from '@tabler/icons-react'
 import styles from './Header.module.scss'
 import { Container } from '../Container'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { npcs } from '@src/data'
+import { npcs } from '../../data'
 import { useState, MouseEvent } from 'react'
 
-export const Header = () => {
+const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
 
   const toggleNav = () => setIsNavOpen((prev) => !prev)
@@ -63,3 +64,4 @@ export const Header = () => {
     </>
   )
 }
+export default Header

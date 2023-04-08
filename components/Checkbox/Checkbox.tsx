@@ -1,3 +1,4 @@
+'use client'
 import { IconCircle, IconCircleCheck } from '@tabler/icons-react'
 import styles from './Checkbox.module.scss'
 import { useState, MouseEvent } from 'react'
@@ -18,7 +19,7 @@ export const Checkbox = ({ isChecked = false, onClick }: CheckboxProps) => {
 
   return (
     <button className={styles.checkbox} onClick={handleClick}>
-      {checked ? <IconCircleCheck size={20} /> : <IconCircle size={20} />}
+      {/*checked ? <IconCircleCheck size={20} /> : <IconCircle size={20} />*/}
     </button>
   )
 }

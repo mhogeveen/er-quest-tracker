@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  experimental: {
+    appDir: true,
+  },
   reactStrictMode: true,
   images: {
     domains: ['eldenring.wiki.fextralife.com'],
   },
   sassOptions: {
-    includePaths: ['./src'],
-    prependData: `@import "src/styles/variables.scss";`,
+    includePaths: ['./'],
+    prependData: `@import "styles/variables.scss";`,
   },
 }
