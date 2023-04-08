@@ -1,4 +1,4 @@
-import { IconHome, IconMenu } from '@tabler/icons-react'
+import { HomeIcon, HamburgerMenuIcon } from '@radix-ui/react-icons'
 import styles from './Header.module.scss'
 import { Container } from '../Container'
 import Link from 'next/link'
@@ -30,10 +30,10 @@ export const Header = () => {
               className={styles.button}
               onClick={() => setIsNavOpen(false)}
             >
-              <IconHome size={20} />
+              <HomeIcon width={20} height={20} />
             </Link>
             <button className={styles.button} onClick={toggleNav}>
-              <IconMenu size={20} />
+              <HamburgerMenuIcon width={20} height={20} />
             </button>
           </div>
         </Container>

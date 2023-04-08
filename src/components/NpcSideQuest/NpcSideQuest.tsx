@@ -1,9 +1,9 @@
 import { Npc } from '@src/types'
 import {
-  IconChevronDown,
-  IconChevronUp,
-  IconExternalLink,
-} from '@tabler/icons-react'
+  ChevronUpIcon,
+  ChevronDownIcon,
+  ExternalLinkIcon,
+} from '@radix-ui/react-icons'
 import { ReactEventHandler, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styles from './NpcSideQuest.module.scss'
@@ -31,7 +31,7 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
         </div>
         <h2 className={styles.title}>{data.name}</h2>
         <a href={data.link} target="_blank" className={styles.link}>
-          <IconExternalLink size={20} />
+          <ExternalLinkIcon width={20} height={20} />
         </a>
         <p className={styles.description}>
           <ReactMarkdown linkTarget="_blank">
@@ -40,9 +40,9 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
         </p>
         <i className={styles.chevron}>
           {open ? (
-            <IconChevronUp size={20} />
+            <ChevronUpIcon width={20} height={20} />
           ) : (
-            <IconChevronDown size={20} />
+            <ChevronDownIcon width={20} height={20} />
           )}
         </i>
       </summary>

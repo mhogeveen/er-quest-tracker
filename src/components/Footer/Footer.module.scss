@@ -5,11 +5,11 @@
     background-color: var(--grey-50);
 }
 
-.icon {
-    stroke: var(--grey-300);
-    transition: stroke var(--transition-duration) ease-in-out;
+.icon > path {
+    color: var(--grey-300);
+    transition: color var(--transition-duration) ease-in-out;
 
     &:hover {
-        stroke: var(--grey-500);
+        color: var(--grey-500);
     }
 }

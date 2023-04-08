@@ -3,7 +3,7 @@ import styles from './NpcSideQuestStep.module.scss'
 import ReactMarkdown from 'react-markdown'
 import { ReactEventHandler, useState } from 'react'
 import { Checkbox } from '../Checkbox'
-import { IconChevronDown, IconChevronUp } from '@tabler/icons-react'
+import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 
 type NpcSideQuestStepProps = {
   data: Step
@@ -33,9 +33,9 @@ export const NpcSideQuestStep = ({ data, isOpen }: NpcSideQuestStepProps) => {
         ) : null}
         <i className={styles.chevron}>
           {open ? (
-            <IconChevronUp size={20} />
+            <ChevronUpIcon width={20} height={20} />
           ) : (
-            <IconChevronDown size={20} />
+            <ChevronDownIcon width={20} height={20} />
           )}
         </i>
       </summary>
