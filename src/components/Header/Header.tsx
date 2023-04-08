@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 import { Container } from '../Container'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { npcs } from '@src/data'
+import npcs from '@src/data'
 import { useState, MouseEvent } from 'react'
 
 export const Header = () => {
