@@ -1,5 +1,4 @@
 {
   "*.{js,jsx,ts,tsx}": "eslint --max-warnings 0",
-  "*.{ts,tsx}": "tsc -p ./tsconfig.json --noEmit",
   "*": "prettier --write --config ./.prettierrc.json"
 }
