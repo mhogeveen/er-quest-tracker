@@ -1,0 +1,22 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  run-ci:
+    name: Lint | Typecheck
+    run-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Install Node.js dependencies
+        run: pnpm i
+
+      - run: pnpm lint
+      - run: pnpm typecheck
