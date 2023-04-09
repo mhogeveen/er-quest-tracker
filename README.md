@@ -76,3 +76,46 @@ export enum Zone {
   WEEPING_PENINSULA = 'Weeping Peninsula',
 }
 ```
+
+## To Do:
+
+- [ ]: Save state in LocalStorage
+
+### NPC's Data:
+
+- [ ]: Alexander
+- [ ]: Bernahl
+- [ ]: Blaidd
+- [ ]: Boc
+- [ ]: Boggart
+- [ ]: Corhyn
+- [ ]: D, Hunter of the Dead
+- [ ]: D, Beholder of Death
+- [ ]: Diallos
+- [ ]: Dung Eater
+- [ ]: Ensha
+- [ ]: Fia
+- [ ]: Gideon
+- [ ]: Gostoc
+- [ ]: Gowry
+- [ ]: Gurranq
+- [ ]: Hyetta
+- [x]: Irina
+- [ ]: Jar Bairn
+- [ ]: Kenneth
+- [x]: Latenna
+- [ ]: Millicent
+- [ ]: Nepheli
+- [ ]: Patches
+- [ ]: Ranni
+- [ ]: Roderika
+- [ ]: Rogier
+- [ ]: Rya
+- [ ]: Sellen
+- [ ]: Seluvius
+- [ ]: Shabriri
+- [ ]: Tanith
+- [ ]: Thops
+- [ ]: Varre
+- [ ]: Wandering Artists Spirit
+- [ ]: Yura
