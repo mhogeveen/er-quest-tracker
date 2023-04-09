@@ -1,0 +1,7 @@
+/* File Formats */
+*.hbs
+
+/* Files */
+.prettierignore
+.gitignore
+pnpm-lock.yaml
