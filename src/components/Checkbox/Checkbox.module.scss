@@ -1,29 +1,29 @@
 .checkbox {
-    --icon-size: 40px;
-    display: grid;
-    place-items: center;
-    height: calc(var(--icon-size) - var(--spacing));
-    width: calc(var(--icon-size) - var(--spacing));
-    margin: calc(var(--spacing) / 2);
-    grid-area: link;
-    border-radius: var(--border-radius);
-    outline: calc(var(--spacing) / 4) solid transparent;
-    outline-offset: 0;
-    transition: background-color var(--transition-duration) ease-in-out,
-        outline-color var(--transition-duration) ease-in-out;
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
+  --icon-size: 40px;
+  display: grid;
+  place-items: center;
+  height: calc(var(--icon-size) - var(--spacing));
+  width: calc(var(--icon-size) - var(--spacing));
+  margin: calc(var(--spacing) / 2);
+  grid-area: link;
+  border-radius: var(--border-radius);
+  outline: calc(var(--spacing) / 4) solid transparent;
+  outline-offset: 0;
+  transition: background-color var(--transition-duration) ease-in-out,
+    outline-color var(--transition-duration) ease-in-out;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 
-    &:focus-visible,
-    &:active,
-    &:hover {
-        background-color: var(--grey-100);
-    }
+  &:focus-visible,
+  &:active,
+  &:hover {
+    background-color: var(--grey-100);
+  }
 
-    &:focus-visible,
-    &:active {
-        outline-color: var(--grey-200);
-    }
+  &:focus-visible,
+  &:active {
+    outline-color: var(--grey-200);
+  }
 }

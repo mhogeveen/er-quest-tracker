@@ -22,10 +22,7 @@ export const useLocalStorage = () => {
     }
 
     return () => {
-      localStorage.setItem(
-        LOCAL_STORAGE_KEY,
-        JSON.stringify(localStorageData)
-      )
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(localStorageData))
     }
   }, [localStorageData])
 

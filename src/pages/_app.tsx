@@ -13,10 +13,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       <style jsx global>{`
-                :root {
-                    --font-family: ${font.style.fontFamily};
-                }
-            `}</style>
+        :root {
+          --font-family: ${font.style.fontFamily};
+        }
+      `}</style>
       <Component {...pageProps} />
     </Layout>
   )

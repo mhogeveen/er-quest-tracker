@@ -16,10 +16,7 @@ export const Layout = ({ children }: LayoutProps) => {
           name="description"
           content="A tracker for your Elden Ring NPC quest progress"
         />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

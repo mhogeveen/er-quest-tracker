@@ -39,10 +39,7 @@ export const Header = () => {
         </Container>
 
         <div
-          className={clsx(
-            styles.dropdown,
-            isNavOpen && styles.visible
-          )}
+          className={clsx(styles.dropdown, isNavOpen && styles.visible)}
           onClick={handleDropdownClick}
         >
           <nav className={styles.nav}>
