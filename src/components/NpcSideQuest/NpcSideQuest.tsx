@@ -54,11 +54,8 @@ export const NpcSideQuest = ({
   )
 }
 
-type NpcSideQuestSummaryProps = {
-  description: string
+type NpcSideQuestSummaryProps = Pick<Npc, 'description' | 'link' | 'name'> & {
   isOpen: boolean
-  link: string
-  name: string
 }
 
 const NpcSideQuestSummary = ({
@@ -90,11 +87,10 @@ const NpcSideQuestSummary = ({
   )
 }
 
-type NpcSideQuestContentProps = {
-  failureConditions?: string[]
-  rewards: Npc['rewards']
-  steps: Npc['steps']
-}
+type NpcSideQuestContentProps = Pick<
+  Npc,
+  'failureConditions' | 'rewards' | 'steps'
+>
 
 const NpcSideQuestContent = ({
   failureConditions,

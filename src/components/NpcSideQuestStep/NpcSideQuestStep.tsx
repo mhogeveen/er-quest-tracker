@@ -41,10 +41,7 @@ export const NpcSideQuestStep = ({
   )
 }
 
-type NpcSideQuestStepSummaryProps = {
-  description: string
-  optional: boolean
-}
+type NpcSideQuestStepSummaryProps = Pick<Step, 'description' | 'optional'>
 
 const NpcSideQuestStepSummary = ({
   description,
@@ -70,10 +67,7 @@ const NpcSideQuestStepSummary = ({
   )
 }
 
-type NpcSideQuestStepContentProps = {
-  note?: string
-  zone: string
-}
+type NpcSideQuestStepContentProps = Pick<Step, 'note' | 'zone'>
 
 const NpcSideQuestStepContent = ({
   note,
