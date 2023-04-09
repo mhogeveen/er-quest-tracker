@@ -3,7 +3,7 @@ on: [push, pull_request]
 jobs:
   run-ci:
     name: Lint | Typecheck
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out Git repository
