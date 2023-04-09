@@ -20,13 +20,13 @@
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.59.3",
+    "sass": "^1.61.0",
     "typescript": "5.0.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/uuid": "^9.0.1",
     "clsx": "^1.2.1",
-    "react-markdown": "^8.0.5"
+    "react-markdown": "^8.0.6"
   }
 }
