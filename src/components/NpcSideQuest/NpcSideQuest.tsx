@@ -129,7 +129,11 @@ const NpcSideQuestContent = ({
           <h3>Steps</h3>
           <div>
             {steps.map((step) => (
-              <NpcSideQuestStep key={step.id} data={step} isOpenByDefault />
+              <NpcSideQuestStep
+                key={step.id}
+                data={step}
+                isOpenByDefault={false}
+              />
             ))}
           </div>
         </>
