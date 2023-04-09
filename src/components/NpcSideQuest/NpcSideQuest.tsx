@@ -8,79 +8,132 @@ import { ReactEventHandler, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import styles from './NpcSideQuest.module.scss'
 import { Checkbox } from '../Checkbox'
+import { Accordion } from '../Accordion'
 import { NpcSideQuestStep } from '../NpcSideQuestStep'
 
 type NpcSideQuestProps = {
   data: Npc
-  isOpen?: boolean
+  isOpenByDefault?: boolean
 }
 
-export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
-  const [open, setOpen] = useState(isOpen)
+export const NpcSideQuest = ({
+  data,
+  isOpenByDefault = false,
+}: NpcSideQuestProps) => {
+  const [isOpen, setIsOpen] = useState(isOpenByDefault)
 
   const handleToggle: ReactEventHandler<HTMLDetailsElement> = (e) => {
+    e.stopPropagation()
     const target = e.target as HTMLDetailsElement
-    setOpen(target.open)
+    setIsOpen(target.open)
   }
 
   return (
-    <details open={open} onToggle={handleToggle} className={styles.details}>
-      <summary className={styles.summary}>
-        <div className={styles.checkbox}>
-          <Checkbox />
-        </div>
-        <h2 className={styles.title}>{data.name}</h2>
-        <a href={data.link} target="_blank" className={styles.link}>
-          <ExternalLinkIcon width={20} height={20} />
-        </a>
-        <div className={styles.description}>
-          <ReactMarkdown linkTarget="_blank">{data.description}</ReactMarkdown>
-        </div>
-        <i className={styles.chevron}>
-          {open ? (
-            <ChevronUpIcon width={20} height={20} />
-          ) : (
-            <ChevronDownIcon width={20} height={20} />
-          )}
-        </i>
-      </summary>
-      <div className={styles.content}>
-        {!!data.failureConditions?.length ? (
-          <>
-            <h3>Failure conditions</h3>
-            <ul className={styles.list}>
-              {data.failureConditions.map((condition, index) => (
-                <li key={index}>
-                  <ReactMarkdown linkTarget="_blank">{condition}</ReactMarkdown>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : null}
-        {!!data.rewards?.length ? (
-          <>
-            <h3>Rewards</h3>
-            <ul className={styles.list}>
-              {data.rewards.map((reward) => (
-                <li key={reward.id}>
-                  {`x${reward.amount} - `}
-                  <a href={reward.link} target="_blank">{`${reward.name}`}</a>
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : null}
-        {!!data.steps.length ? (
-          <>
-            <h3>Steps</h3>
-            <div>
-              {data.steps.map((step) => (
-                <NpcSideQuestStep key={step.id} data={step} isOpen={true} />
-              ))}
-            </div>
-          </>
-        ) : null}
+    <Accordion
+      classes={{
+        summary: styles.summary,
+      }}
+      content={
+        <NpcSideQuestContent
+          failureConditions={data.failureConditions}
+          rewards={data.rewards}
+          steps={data.steps}
+        />
+      }
+      summary={
+        <NpcSideQuestSummary
+          description={data.description}
+          isOpen={isOpen}
+          link={data.link}
+          name={data.name}
+        />
+      }
+      handleToggle={handleToggle}
+      isOpen={isOpen}
+    />
+  )
+}
+
+type NpcSideQuestSummaryProps = Pick<Npc, 'description' | 'link' | 'name'> & {
+  isOpen: boolean
+}
+
+const NpcSideQuestSummary = ({
+  description,
+  isOpen,
+  link,
+  name,
+}: NpcSideQuestSummaryProps) => {
+  return (
+    <>
+      <div className={styles.checkbox}>
+        <Checkbox />
       </div>
-    </details>
+      <h2 className={styles.title}>{name}</h2>
+      <a href={link} target="_blank" className={styles.link}>
+        <ExternalLinkIcon width={20} height={20} />
+      </a>
+      <div className={styles.description}>
+        <ReactMarkdown linkTarget="_blank">{description}</ReactMarkdown>
+      </div>
+      <i className={styles.chevron}>
+        {isOpen ? (
+          <ChevronUpIcon width={20} height={20} />
+        ) : (
+          <ChevronDownIcon width={20} height={20} />
+        )}
+      </i>
+    </>
+  )
+}
+
+type NpcSideQuestContentProps = Pick<
+  Npc,
+  'failureConditions' | 'rewards' | 'steps'
+>
+
+const NpcSideQuestContent = ({
+  failureConditions,
+  rewards,
+  steps,
+}: NpcSideQuestContentProps) => {
+  return (
+    <>
+      {!!failureConditions?.length ? (
+        <>
+          <h3>Failure conditions</h3>
+          <ul className={styles.list}>
+            {failureConditions.map((condition, index) => (
+              <li key={index}>
+                <ReactMarkdown linkTarget="_blank">{condition}</ReactMarkdown>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+      {!!rewards?.length ? (
+        <>
+          <h3>Rewards</h3>
+          <ul className={styles.list}>
+            {rewards.map((reward) => (
+              <li key={reward.id}>
+                {`x${reward.amount} - `}
+                <a href={reward.link} target="_blank">{`${reward.name}`}</a>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : null}
+      {!!steps.length ? (
+        <>
+          <h3>Steps</h3>
+          <div>
+            {steps.map((step) => (
+              <NpcSideQuestStep key={step.id} data={step} isOpenByDefault />
+            ))}
+          </div>
+        </>
+      ) : null}
+    </>
   )
 }

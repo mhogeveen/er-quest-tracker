@@ -14,7 +14,7 @@ export default function Page({ npcData }: PageProps) {
       <Head>
         <title>{`${npcData.name} / Elden Ring Quest Tracker`}</title>
       </Head>
-      <NpcSideQuest data={npcData} isOpen={true} />
+      <NpcSideQuest data={npcData} isOpenByDefault={true} />
     </>
   )
 }

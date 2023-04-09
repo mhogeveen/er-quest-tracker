@@ -14,7 +14,7 @@ export default function Home({ npcsData }: PageProps) {
   return (
     <>
       {npcsData.map((npc) => (
-        <NpcSideQuest key={npc.id} data={npc} />
+        <NpcSideQuest key={npc.id} data={npc} isOpenByDefault={false} />
       ))}
     </>
   )

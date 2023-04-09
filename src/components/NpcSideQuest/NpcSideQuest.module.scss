@@ -1,40 +1,8 @@
-.details {
-  border: 1px solid var(--grey-200);
-  border-radius: var(--border-radius);
-  padding: var(--spacing);
-  transition: border-color var(--transition-duration) ease-in-out;
-  background-color: var(--white);
-
-  &:hover {
-    border-color: var(--grey-400);
-  }
-
-  & + & {
-    margin-top: var(--spacing);
-  }
-}
-
 .summary {
-  list-style: none;
   display: grid;
   grid-template-areas: 'checkbox title link chevron' '. description description description';
   grid-template-columns: var(--icon-size) 1fr var(--icon-size) var(--icon-size);
   align-items: center;
-  cursor: pointer;
-
-  &::-webkit-details-marker,
-  &::marker {
-    display: none;
-  }
-}
-
-.content {
-  padding-top: var(--spacing);
-  margin-top: var(--spacing);
-  border-top: 1px solid var(--grey-200);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing);
 }
 
 .checkbox {
