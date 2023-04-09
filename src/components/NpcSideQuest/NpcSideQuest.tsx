@@ -33,11 +33,11 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
         <a href={data.link} target="_blank" className={styles.link}>
           <ExternalLinkIcon width={20} height={20} />
         </a>
-        <p className={styles.description}>
+        <div className={styles.description}>
           <ReactMarkdown linkTarget="_blank">
             {data.description}
           </ReactMarkdown>
-        </p>
+        </div>
         <i className={styles.chevron}>
           {open ? (
             <ChevronUpIcon width={20} height={20} />
