@@ -1,15 +1,15 @@
 .footer {
-    height: 50px;
-    display: grid;
-    place-items: center;
-    background-color: var(--grey-50);
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background-color: var(--grey-50);
 }
 
 .icon > path {
-    color: var(--grey-300);
-    transition: color var(--transition-duration) ease-in-out;
+  color: var(--grey-300);
+  transition: color var(--transition-duration) ease-in-out;
 
-    &:hover {
-        color: var(--grey-500);
-    }
+  &:hover {
+    color: var(--grey-500);
+  }
 }

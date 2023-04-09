@@ -34,9 +34,7 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
           <ExternalLinkIcon width={20} height={20} />
         </a>
         <div className={styles.description}>
-          <ReactMarkdown linkTarget="_blank">
-            {data.description}
-          </ReactMarkdown>
+          <ReactMarkdown linkTarget="_blank">{data.description}</ReactMarkdown>
         </div>
         <i className={styles.chevron}>
           {open ? (
@@ -53,9 +51,7 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
             <ul className={styles.list}>
               {data.failureConditions.map((condition, index) => (
                 <li key={index}>
-                  <ReactMarkdown linkTarget="_blank">
-                    {condition}
-                  </ReactMarkdown>
+                  <ReactMarkdown linkTarget="_blank">{condition}</ReactMarkdown>
                 </li>
               ))}
             </ul>
@@ -68,10 +64,7 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
               {data.rewards.map((reward) => (
                 <li key={reward.id}>
                   {`x${reward.amount} - `}
-                  <a
-                    href={reward.link}
-                    target="_blank"
-                  >{`${reward.name}`}</a>
+                  <a href={reward.link} target="_blank">{`${reward.name}`}</a>
                 </li>
               ))}
             </ul>
@@ -82,11 +75,7 @@ export const NpcSideQuest = ({ data, isOpen = false }: NpcSideQuestProps) => {
             <h3>Steps</h3>
             <div>
               {data.steps.map((step) => (
-                <NpcSideQuestStep
-                  key={step.id}
-                  data={step}
-                  isOpen={true}
-                />
+                <NpcSideQuestStep key={step.id} data={step} isOpen={true} />
               ))}
             </div>
           </>

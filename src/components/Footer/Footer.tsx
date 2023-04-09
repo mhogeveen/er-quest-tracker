@@ -9,11 +9,7 @@ export const Footer = () => {
         href="https://github.com/mhogeveen/er-sidequest-tracker"
         target="_blank"
       >
-        <GitHubLogoIcon
-          width={30}
-          height={30}
-          className={styles.icon}
-        />
+        <GitHubLogoIcon width={30} height={30} className={styles.icon} />
       </Link>
     </footer>
   )
