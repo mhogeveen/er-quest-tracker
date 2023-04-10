@@ -1,44 +1,29 @@
-import { useEffect, useRef } from 'react'
-import npcs from '@src/data'
+import { NpcId } from '@src/types'
+import useLocalStorageState from 'use-local-storage-state'
 
 type NpcProgress = {
-  [key: string]: {
-    [key: number]: boolean
-  }
+  [key: string]: boolean
 }
 
-const LOCAL_STORAGE_KEY = 'er-npc-quest-progress'
+const LOCAL_STORAGE_PREFIX = 'er-sidequest-tracker'
 
-export const useLocalStorage = () => {
-  const localStorageData = useRef<NpcProgress>()
+export const useNpcLocalStorage = (npcId: NpcId) => {
+  const [value, setValue] = useLocalStorageState<NpcProgress>(
+    `${LOCAL_STORAGE_PREFIX}-${npcId}`,
+    { defaultValue: {} }
+  )
 
-  useEffect(() => {
-    const progressFromLocalStorage = localStorage.getItem(LOCAL_STORAGE_KEY)
-
-    if (!progressFromLocalStorage) {
-      localStorageData.current = generateEmptyProgressObject()
-    } else {
-      localStorageData.current = JSON.parse(progressFromLocalStorage)
-    }
-
-    return () => {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(localStorageData))
-    }
-  }, [localStorageData])
-
-  const generateEmptyProgressObject = () => {
-    const tempObj: NpcProgress = {}
-
-    npcs.forEach((npc) => {
-      tempObj[npc.id] = {}
-
-      npc.steps.forEach((step) => {
-        tempObj[npc.id][step.id] = false
-      })
-    })
-
-    return tempObj
+  const setLocalStorageStep = (stepId: string, state: boolean) => {
+    setValue((oldValue) => ({ ...oldValue, [stepId]: state }))
   }
 
-  return {}
+  const setLocalStorageTotal = (state: boolean) => {
+    setValue((oldValue) => ({ ...oldValue, total: state }))
+  }
+
+  return {
+    localStorageValue: value,
+    setLocalStorageStep,
+    setLocalStorageTotal,
+  }
 }

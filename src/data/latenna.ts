@@ -1,8 +1,8 @@
-import { Npc, Zone } from '@src/types'
+import { Npc, NpcId, Zone } from '@src/types'
 import { v4 as uuid } from 'uuid'
 
 export const latenna: Npc = {
-  id: 'latenna',
+  id: NpcId.LATENNA,
   name: 'Latenna',
   description:
     "Latenna's quest will lead you to the Consecrated Snowfields in search of the Haligtree.",
