@@ -1,8 +1,8 @@
-import { Npc } from '@src/types'
+import { Npc, NpcId } from '@src/types'
 import { v4 as uuid } from 'uuid'
 
 export const gideon: Npc = {
-  id: 'gideon',
+  id: NpcId.GIDEON,
   name: 'Gideon Ofnir',
   description:
     "Gideon Ofnir's quest will progress alongside your progression through the story.",

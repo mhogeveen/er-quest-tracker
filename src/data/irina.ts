@@ -1,8 +1,8 @@
-import { Npc, Zone } from '@src/types'
+import { Npc, NpcId, Zone } from '@src/types'
 import { v4 as uuid } from 'uuid'
 
 export const irina: Npc = {
-  id: 'irina',
+  id: NpcId.IRINA,
   name: 'Irina',
   description:
     'You will find the blind and bloodied Irina after she fled a rebellion at Castle Morne. Help her deliver a letter to her father.',
