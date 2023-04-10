@@ -1,50 +1,29 @@
-import npcs from '@src/data'
-import { NpcId, Step } from '@src/types'
-import { useLocalStorage } from 'react-use'
+import { NpcId } from '@src/types'
+import useLocalStorageState from 'use-local-storage-state'
 
 type NpcProgress = {
-  total: boolean
   [key: string]: boolean
 }
 
 const LOCAL_STORAGE_PREFIX = 'er-sidequest-tracker'
 
 export const useNpcLocalStorage = (npcId: NpcId) => {
-  const npc = npcs.find((npc) => npc.id === npcId)
-  const initialState = npc?.steps.reduce(
-    (acc: NpcProgress, curr: Step) => {
-      acc[curr.id.toString()] = false
-      return acc
-    },
-    { total: false }
-  )
-
-  const [value, setValue, remove] = useLocalStorage<NpcProgress>(
+  const [value, setValue] = useLocalStorageState<NpcProgress>(
     `${LOCAL_STORAGE_PREFIX}-${npcId}`,
-    initialState
+    { defaultValue: {} }
   )
 
-  const setLocalStorageStep = (stepId: number, state: boolean) => {
-    const newValue = value
-    const stepExists = npc?.steps.find((step) => step.id === stepId)
-
-    if (!stepExists || !newValue || !(stepId.toString() in newValue)) return
-
-    newValue[stepId.toString()] = state
-    setValue(newValue)
+  const setLocalStorageStep = (stepId: string, state: boolean) => {
+    setValue((oldValue) => ({ ...oldValue, [stepId]: state }))
   }
 
   const setLocalStorageTotal = (state: boolean) => {
-    const newValue = value
-    if (!newValue) return
-    newValue.total = state
-    setValue(newValue)
+    setValue((oldValue) => ({ ...oldValue, total: state }))
   }
 
   return {
     localStorageValue: value,
     setLocalStorageStep,
     setLocalStorageTotal,
-    removeLocalStoreValue: remove,
   }
 }
