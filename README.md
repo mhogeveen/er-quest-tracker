@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```tsx
 export type Npc = {
-  id: string
+  id: NpcId
   name: string
   description: string
   link: string
@@ -46,6 +46,45 @@ export type Step = {
   description: string
   note?: string
   zone: Zone
+}
+
+export enum NpcId {
+  ALEXANDER = 'alexander',
+  BERNAHL = 'bernahl',
+  BLAIDD = 'blaidd',
+  BOC = 'boc',
+  BOGGART = 'boggart',
+  CORHYN = 'corhyn',
+  D_HUNTER = 'd-hunter',
+  D_BEHOLDER = 'd-beholder',
+  DIALLOS = 'diallos',
+  DUNG_EATER = 'dung-eater',
+  ENSHA = 'ensha',
+  FIA = 'fia',
+  GIDEON = 'gideon',
+  GOSTOC = 'gostoc',
+  GOWRY = 'gowry',
+  GURRANQ = 'gurranq',
+  HYETTA = 'hyetta',
+  IRINA = ' irina',
+  JAR_BAIRN = 'jar-bairn',
+  KENNETH = 'kenneth',
+  LATENNA = 'latenna',
+  MILLICENT = 'millicent',
+  NEPHELI = 'nepheli',
+  PATCHES = 'patches',
+  RANNI = 'ranni',
+  RODERIKA = 'roderika',
+  ROGIER = 'rogier',
+  RYA = 'rya',
+  SELLEN = 'sellen',
+  SELUVIUS = 'seluvius',
+  SHABRIRI = 'shabriri',
+  TANITH = 'tanith',
+  THOPS = 'thops',
+  VARRE = 'varre',
+  WANDERING_ARTISTS_SPIRIT = 'wandering-artists-spirit',
+  YURA = 'yura',
 }
 
 export enum Zone {
@@ -79,7 +118,7 @@ export enum Zone {
 
 ## To Do:
 
-- [ ] Save state in LocalStorage
+- [x] Save state in LocalStorage
 
 ### NPC's Data
 
