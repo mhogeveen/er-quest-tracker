@@ -1,18 +1,22 @@
 import { CircleIcon, CheckCircledIcon } from '@radix-ui/react-icons'
 import styles from './Checkbox.module.scss'
-import { useState, MouseEvent } from 'react'
+import { useState, MouseEvent, useEffect } from 'react'
 
 type CheckboxProps = {
   isChecked?: boolean
-  onClick?: () => void
+  onClick?: (state: boolean) => void
 }
 
 export const Checkbox = ({ isChecked = false, onClick }: CheckboxProps) => {
-  const [checked, setChecked] = useState(isChecked)
+  const [checked, setChecked] = useState(false)
+
+  useEffect(() => {
+    setChecked(isChecked)
+  }, [isChecked])
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    onClick?.()
+    onClick?.(!checked)
     setChecked((prev) => !prev)
   }
 

@@ -10,6 +10,7 @@ import styles from './NpcSideQuest.module.scss'
 import { Checkbox } from '../Checkbox'
 import { Accordion } from '../Accordion'
 import { NpcSideQuestStep } from '../NpcSideQuestStep'
+import { useNpcLocalStorage } from '@src/hooks/useLocalStorage'
 
 type NpcSideQuestProps = {
   data: Npc
@@ -20,6 +21,8 @@ export const NpcSideQuest = ({
   data,
   isOpenByDefault = false,
 }: NpcSideQuestProps) => {
+  const { localStorageValue, setLocalStorageStep, setLocalStorageTotal } =
+    useNpcLocalStorage(data.id)
   const [isOpen, setIsOpen] = useState(isOpenByDefault)
 
   const handleToggle: ReactEventHandler<HTMLDetailsElement> = (e) => {
@@ -43,9 +46,11 @@ export const NpcSideQuest = ({
       summary={
         <NpcSideQuestSummary
           description={data.description}
+          isNpcComplete={!!localStorageValue?.total}
           isOpen={isOpen}
           link={data.link}
           name={data.name}
+          toggleNpcComplete={(state) => setLocalStorageTotal(state)}
         />
       }
       handleToggle={handleToggle}
@@ -55,19 +60,23 @@ export const NpcSideQuest = ({
 }
 
 type NpcSideQuestSummaryProps = Pick<Npc, 'description' | 'link' | 'name'> & {
+  isNpcComplete: boolean
   isOpen: boolean
+  toggleNpcComplete: (state: boolean) => void
 }
 
 const NpcSideQuestSummary = ({
   description,
+  isNpcComplete,
   isOpen,
   link,
   name,
+  toggleNpcComplete,
 }: NpcSideQuestSummaryProps) => {
   return (
     <>
       <div className={styles.checkbox}>
-        <Checkbox />
+        <Checkbox isChecked={isNpcComplete} onClick={toggleNpcComplete} />
       </div>
       <h2 className={styles.title}>{name}</h2>
       <a href={link} target="_blank" className={styles.link}>
