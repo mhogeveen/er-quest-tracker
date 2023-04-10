@@ -1,44 +1,50 @@
-import { useEffect, useRef } from 'react'
 import npcs from '@src/data'
+import { NpcId, Step } from '@src/types'
+import { useLocalStorage } from 'react-use'
 
 type NpcProgress = {
-  [key: string]: {
-    [key: number]: boolean
-  }
+  total: boolean
+  [key: string]: boolean
 }
 
-const LOCAL_STORAGE_KEY = 'er-npc-quest-progress'
+const LOCAL_STORAGE_PREFIX = 'er-sidequest-tracker'
 
-export const useLocalStorage = () => {
-  const localStorageData = useRef<NpcProgress>()
+export const useNpcLocalStorage = (npcId: NpcId) => {
+  const npc = npcs.find((npc) => npc.id === npcId)
+  const initialState = npc?.steps.reduce(
+    (acc: NpcProgress, curr: Step) => {
+      acc[curr.id.toString()] = false
+      return acc
+    },
+    { total: false }
+  )
 
-  useEffect(() => {
-    const progressFromLocalStorage = localStorage.getItem(LOCAL_STORAGE_KEY)
+  const [value, setValue, remove] = useLocalStorage<NpcProgress>(
+    `${LOCAL_STORAGE_PREFIX}-${npcId}`,
+    initialState
+  )
 
-    if (!progressFromLocalStorage) {
-      localStorageData.current = generateEmptyProgressObject()
-    } else {
-      localStorageData.current = JSON.parse(progressFromLocalStorage)
-    }
+  const setLocalStorageStep = (stepId: number, state: boolean) => {
+    const newValue = value
+    const stepExists = npc?.steps.find((step) => step.id === stepId)
 
-    return () => {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(localStorageData))
-    }
-  }, [localStorageData])
+    if (!stepExists || !newValue || !(stepId.toString() in newValue)) return
 
-  const generateEmptyProgressObject = () => {
-    const tempObj: NpcProgress = {}
-
-    npcs.forEach((npc) => {
-      tempObj[npc.id] = {}
-
-      npc.steps.forEach((step) => {
-        tempObj[npc.id][step.id] = false
-      })
-    })
-
-    return tempObj
+    newValue[stepId.toString()] = state
+    setValue(newValue)
   }
 
-  return {}
+  const setLocalStorageTotal = (state: boolean) => {
+    const newValue = value
+    if (!newValue) return
+    newValue.total = state
+    setValue(newValue)
+  }
+
+  return {
+    localStorageValue: value,
+    setLocalStorageStep,
+    setLocalStorageTotal,
+    removeLocalStoreValue: remove,
+  }
 }
