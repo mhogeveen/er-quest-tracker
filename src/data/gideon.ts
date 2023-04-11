@@ -1,4 +1,4 @@
-import { Npc, NpcId } from '@src/types'
+import { Npc, NpcId, Zone } from '@src/types'
 import { v4 as uuid } from 'uuid'
 
 export const gideon: Npc = {
@@ -37,8 +37,66 @@ export const gideon: Npc = {
       link: "https://eldenring.wiki.fextralife.com/Lord's+Divine+Fortification",
     },
   ],
-  steps: [],
+  steps: [
+    {
+      id: 1,
+      optional: false,
+      description: 'Visit Roundtable Hold.',
+      zone: Zone.ROUNDTABLE_HOLD,
+    },
+    {
+      id: 2,
+      optional: false,
+      description: 'Obtain a Great Rune.',
+      zone: Zone.LANDS_BETWEEN,
+    },
+    {
+      id: 3,
+      optional: false,
+      description:
+        'Kill [Morgott the Omen King](https://eldenring.wiki.fextralife.com/Morgott+the+Omen+King).',
+      zone: Zone.LEYNDELL,
+    },
+    {
+      id: 4,
+      optional: false,
+      description: "Speak to Gideon about the 'unlocated demigods'.",
+      zone: Zone.ROUNDTABLE_HOLD,
+    },
+    {
+      id: 5,
+      optional: true,
+      description:
+        'Discover [Mohgwyn Dynasty Mausoleum](https://eldenring.wiki.fextralife.com/Mohgwyn+Dynasty+Mausoleum) and speak with Gideon.',
+      zone: Zone.MOHGWYN_PALACE,
+      note: "This rewards the Fevor's Cookbook [3].",
+    },
+    {
+      id: 5,
+      optional: true,
+      description:
+        'Kill [Mogh, Lord of Blood](https://eldenring.wiki.fextralife.com/Mohg,+Lord+of+Blood) and speak with Gideon.',
+      zone: Zone.MOHGWYN_PALACE,
+      note: 'This rewards the Law of Causality incantation.',
+    },
+    {
+      id: 6,
+      optional: true,
+      description:
+        "Discover [Miquella's Haligtree](https://eldenring.wiki.fextralife.com/Miquella's+Haligtree) and speak with Gideon.",
+      zone: Zone.HALIGTREE,
+      note: "This rewards the Black Flame's Protection incantation.",
+    },
+    {
+      id: 7,
+      optional: true,
+      description:
+        'Kill [Malenia, Blade of Miquella](https://eldenring.wiki.fextralife.com/Malenia,+Blade+of+Miquella) and speak with Gideon.',
+      zone: Zone.HALIGTREE,
+      note: "This rewards the Lord's Divine Fortification incantation.",
+    },
+  ],
   failureConditions: [
-    'Killing [Maliketh, The Black Blade](https://eldenring.wiki.fextralife.com/Maliketh,+The+Black+Blade) will trigger Gideon to leave the roundtable hold and become a boss',
+    'Killing [Maliketh, The Black Blade](https://eldenring.wiki.fextralife.com/Maliketh,+The+Black+Blade) will trigger Gideon to leave the roundtable hold and become a boss.',
   ],
 }

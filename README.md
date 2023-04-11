@@ -99,6 +99,7 @@ export enum Zone {
   FORBIDDEN_LANDS = 'Forbidden Lands',
   HALIGTREE = "Miquella's Haligtree",
   LAKE_OF_ROT = 'Lake of Rot',
+  LANDS_BETWEEN = 'The Lands Between',
   LEYNDELL = 'Leyndell, Royal Capital',
   LEYNDELL_ASHEN = 'Leyndell, Ashen Capital',
   LIMGRAVE = 'Limgrave',
@@ -108,6 +109,7 @@ export enum Zone {
   MOUNTAINTOP = 'Mountaintop of the Giants',
   NOKRON = 'Nokron, Eternal City',
   RAYA_LUCARIA = 'Academy of Raya Lucaria',
+  ROUNDTABLE_HOLD = 'Roundtable Hold',
   SIOFRA_AQUADUCT = 'Siofra Aquaduct',
   SIOFRA_RIVER = 'Siofra River',
   STORMHILL = 'Stormhill',
@@ -119,6 +121,8 @@ export enum Zone {
 ## To Do:
 
 - [x] Save state in LocalStorage
+- [ ] Nicer styling for dropdown menu
+- [ ] Check for responsive styling
 
 ### NPC's Data
 
@@ -134,7 +138,7 @@ export enum Zone {
 - [ ] Dung Eater
 - [ ] Ensha
 - [ ] Fia
-- [ ] Gideon
+- [x] Gideon
 - [ ] Gostoc
 - [ ] Gowry
 - [ ] Gurranq
