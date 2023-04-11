@@ -162,3 +162,16 @@ export enum Zone {
 - [ ] Varre
 - [ ] Wandering Artists Spirit
 - [ ] Yura
+
+## Contributing
+
+If you are interested in contributing to this project, please check out [CONTRIBUTION.md](https://github.com/mhogeveen/er-sidequest-tracker/blob/main/CONTRIBUTING.md).
+
+## Github Actions
+
+This project makes use of Github Actions to Lint and Typecheck the codebase before a pull-request can be merged.
+
+## Acknowledgements
+
+Thank you to all of the hard work people put into accumulating information on everything Elden Ring related over at the [Elden Ring wiki](https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki)!
+Without your hard work and dedication this project would not been possible.
