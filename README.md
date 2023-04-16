@@ -121,7 +121,7 @@ export enum Zone {
 ## To Do:
 
 - [x] Save state in LocalStorage
-- [ ] Nicer styling for dropdown menu
+- [x] Nicer styling for dropdown menu
 - [ ] Check for responsive styling
 - [ ] SEO
 - [ ] Favicon
