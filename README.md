@@ -167,7 +167,7 @@ export enum Zone {
 
 ## Contributing
 
-If you are interested in contributing to this project, please check out [CONTRIBUTION.md](https://github.com/mhogeveen/er-sidequest-tracker/blob/main/CONTRIBUTING.md).
+If you are interested in contributing to this project, please check out [CONTRIBUTION.md](https://github.com/mhogeveen/er-quest-tracker/blob/main/CONTRIBUTING.md).
 
 ## Github Actions
 
