@@ -129,7 +129,7 @@ export enum Zone {
 ### NPC's Data
 
 - [x] Alexander
-- [ ] Bernahl
+- [x] Bernahl
 - [ ] Blaidd
 - [ ] Boc
 - [ ] Boggart
