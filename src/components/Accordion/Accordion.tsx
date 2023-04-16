@@ -12,6 +12,7 @@ type AccordionProps = {
   classes?: AccordionClasses
   content?: ReactNode
   handleToggle?: (e: SyntheticEvent<HTMLDetailsElement>) => void
+  isComplete?: boolean
   isOpen: boolean
   summary?: ReactNode
 }
@@ -20,6 +21,7 @@ export const Accordion = ({
   classes,
   content,
   handleToggle,
+  isComplete,
   isOpen,
   summary,
 }: AccordionProps) => {
@@ -27,7 +29,11 @@ export const Accordion = ({
     <details
       open={isOpen}
       onToggle={handleToggle}
-      className={clsx(styles.details, classes?.details)}
+      className={clsx(
+        styles.details,
+        classes?.details,
+        isComplete && styles.complete
+      )}
     >
       <summary className={clsx(styles.summary, classes?.summary)}>
         {summary}

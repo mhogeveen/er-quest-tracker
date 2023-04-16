@@ -11,12 +11,14 @@ type NpcSideQuestStepProps = {
   data: Step
   isOpenByDefault?: boolean
   npcId: NpcId
+  stepNumber?: number
 }
 
 export const NpcSideQuestStep = ({
   data,
   isOpenByDefault = false,
   npcId,
+  stepNumber,
 }: NpcSideQuestStepProps) => {
   const { localStorageValue, setLocalStorageStep } = useNpcLocalStorage(npcId)
   const [isOpen, setIsOpen] = useState(isOpenByDefault)
@@ -29,23 +31,25 @@ export const NpcSideQuestStep = ({
 
   return (
     <Accordion
-      isOpen={isOpen}
-      handleToggle={handleToggle}
       classes={{
         summary: styles.summary,
       }}
+      content={<NpcSideQuestStepContent note={data.note} zone={data.zone} />}
+      handleToggle={handleToggle}
       summary={
         <NpcSideQuestStepSummary
           description={data.description}
           isOpen={isOpen}
           isStepComplete={!!localStorageValue?.[data.id]}
           optional={data.optional}
+          stepNumber={stepNumber}
           toggleStepComplete={(state) =>
             setLocalStorageStep(data.id.toString(), state)
           }
         />
       }
-      content={<NpcSideQuestStepContent note={data.note} zone={data.zone} />}
+      isComplete={!!localStorageValue?.[data.id]}
+      isOpen={isOpen}
     />
   )
 }
@@ -54,6 +58,7 @@ type NpcSideQuestStepSummaryProps = Pick<Step, 'description' | 'optional'> & {
   isOpen: boolean
   isStepComplete: boolean
   toggleStepComplete: (state: boolean) => void
+  stepNumber?: number
 }
 
 const NpcSideQuestStepSummary = ({
@@ -62,11 +67,16 @@ const NpcSideQuestStepSummary = ({
   isStepComplete,
   optional,
   toggleStepComplete,
+  stepNumber,
 }: NpcSideQuestStepSummaryProps) => {
   return (
     <>
       <div className={styles.checkbox}>
-        <Checkbox isChecked={isStepComplete} onClick={toggleStepComplete} />
+        <Checkbox
+          isChecked={isStepComplete}
+          number={stepNumber}
+          onClick={toggleStepComplete}
+        />
       </div>
       <ReactMarkdown linkTarget="_blank" className={styles.title}>
         {description}

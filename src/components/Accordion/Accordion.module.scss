@@ -1,9 +1,11 @@
 .details {
-  border: 1px solid var(--grey-200);
+  border: 1px dashed var(--grey-200);
   border-radius: var(--border-radius);
   padding: var(--spacing);
   transition: border-color var(--transition-duration) ease-in-out;
   background-color: var(--white);
+  outline: 1px dashed transparent;
+  outline-offset: 0;
 
   &:hover {
     border-color: var(--grey-400);
@@ -12,11 +14,22 @@
   & + & {
     margin-top: var(--spacing);
   }
+
+  &.complete {
+    border-style: solid;
+    outline-style: solid;
+  }
+
+  &:focus-within {
+    border-color: var(--grey-400);
+    outline-color: var(--grey-400);
+  }
 }
 
 .summary {
   list-style: none;
   cursor: pointer;
+  outline: 0;
 
   &::-webkit-details-marker,
   &::marker {

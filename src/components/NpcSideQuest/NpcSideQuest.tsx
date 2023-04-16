@@ -56,6 +56,7 @@ export const NpcSideQuest = ({
         />
       }
       handleToggle={handleToggle}
+      isComplete={!!localStorageValue?.total}
       isOpen={isOpen}
     />
   )
@@ -143,6 +144,7 @@ const NpcSideQuestContent = ({
             {steps.map((step) => (
               <NpcSideQuestStep
                 key={step.id}
+                stepNumber={step.id}
                 data={step}
                 isOpenByDefault={false}
                 npcId={id}

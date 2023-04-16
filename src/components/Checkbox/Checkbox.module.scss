@@ -1,5 +1,5 @@
 .checkbox {
-  --icon-size: 40px;
+  position: relative;
   display: grid;
   place-items: center;
   height: calc(var(--icon-size) - var(--spacing));
@@ -26,4 +26,18 @@
   &:active {
     outline-color: var(--grey-200);
   }
+
+  &.checked {
+    path {
+      color: var(--emerald-500);
+    }
+  }
+}
+
+.stepNumber {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 8px;
 }
