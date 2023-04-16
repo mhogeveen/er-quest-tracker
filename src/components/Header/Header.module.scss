@@ -89,10 +89,22 @@
 }
 
 .list {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--spacing);
-  flex-flow: row wrap;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media ($sm-up) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media ($md-up) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media ($lg-up) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
