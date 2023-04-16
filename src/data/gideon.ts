@@ -72,7 +72,7 @@ export const gideon: Npc = {
       note: "This rewards the Fevor's Cookbook [3].",
     },
     {
-      id: 5,
+      id: 6,
       optional: true,
       description:
         'Kill [Mogh, Lord of Blood](https://eldenring.wiki.fextralife.com/Mohg,+Lord+of+Blood) and speak with Gideon.',
@@ -80,7 +80,7 @@ export const gideon: Npc = {
       note: 'This rewards the Law of Causality incantation.',
     },
     {
-      id: 6,
+      id: 7,
       optional: true,
       description:
         "Discover [Miquella's Haligtree](https://eldenring.wiki.fextralife.com/Miquella's+Haligtree) and speak with Gideon.",
@@ -88,7 +88,7 @@ export const gideon: Npc = {
       note: "This rewards the Black Flame's Protection incantation.",
     },
     {
-      id: 7,
+      id: 8,
       optional: true,
       description:
         'Kill [Malenia, Blade of Miquella](https://eldenring.wiki.fextralife.com/Malenia,+Blade+of+Miquella) and speak with Gideon.',
