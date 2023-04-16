@@ -123,6 +123,8 @@ export enum Zone {
 - [x] Save state in LocalStorage
 - [ ] Nicer styling for dropdown menu
 - [ ] Check for responsive styling
+- [ ] SEO
+- [ ] Favicon
 
 ### NPC's Data
 
