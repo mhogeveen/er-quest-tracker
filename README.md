@@ -124,7 +124,7 @@ export enum Zone {
 - [x] Nicer styling for dropdown menu
 - [ ] Check for responsive styling
 - [ ] SEO
-- [ ] Favicon
+- [x] Favicon
 
 ### NPC's Data
 
