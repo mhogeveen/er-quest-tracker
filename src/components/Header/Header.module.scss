@@ -83,7 +83,7 @@
 }
 
 .nav {
-  padding: var(--spacing) 0;
+  padding: calc(var(--spacing) * 2) 0;
   background-color: var(--white);
   border-bottom: 1px solid var(--grey-200);
 }
