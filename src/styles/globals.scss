@@ -5,7 +5,7 @@
   --icon-size: 40px;
 
   --white: #ffffff;
-  --balck: #000000;
+  --black: #000000;
 
   --grey-50: #f9fafb;
   --grey-100: #f3f4f6;
@@ -17,6 +17,31 @@
   --grey-700: #374151;
   --grey-800: #1f2937;
   --grey-900: #111827;
+  --grey-950: #030712;
+
+  --emerald-50: #ecfdf5;
+  --emerald-100: #d1fae5;
+  --emerald-200: #a7f3d0;
+  --emerald-300: #6ee7b7;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+  --emerald-600: #059669;
+  --emerald-700: #047857;
+  --emerald-800: #065f46;
+  --emerald-900: #064e3b;
+  --emerald-950: #022c22;
+
+  --cyan-50: #ecfeff;
+  --cyan-100: #cffafe;
+  --cyan-200: #a5f3fc;
+  --cyan-300: #67e8f9;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+  --cyan-700: #0e7490;
+  --cyan-800: #155e75;
+  --cyan-900: #164e63;
+  --cyan-950: #083344;
 }
 
 *,
@@ -35,5 +60,15 @@
 
   main {
     flex-grow: 1;
+  }
+}
+
+a {
+  outline: 0;
+  text-decoration-style: dashed;
+
+  &:focus-visible,
+  &:hover {
+    text-decoration-style: solid;
   }
 }
