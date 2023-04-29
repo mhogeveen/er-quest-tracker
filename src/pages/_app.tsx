@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import 'normalize.css'
 import '@src/styles/globals.scss'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 
 const font = Inter({
   weight: ['400', '700'],
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <Component {...pageProps} />
+      <Analytics />
     </Layout>
   )
 }
