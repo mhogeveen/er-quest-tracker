@@ -10,6 +10,13 @@ type PageProps = {
 export default function Home({ npcsData }: PageProps) {
   return (
     <>
+      <h3 style={{ marginBlock: '16px', color: 'red' }}>
+        This site is still under construction. The existing NPCs will remain
+        available and with time the others will become available as well.
+        <br />
+        <br />
+        Thank you for your patience!
+      </h3>
       {npcsData.map((npc) => (
         <NpcSideQuest key={npc.id} data={npc} isOpenByDefault={false} />
       ))}
