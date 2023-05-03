@@ -15,31 +15,26 @@ export const alexander: Npc = {
     {
       id: uuid(),
       name: 'Gesture [Triumphant Delight]',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Gestures',
     },
     {
       id: uuid(),
       name: 'Jar [Helmet]',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Jar',
     },
     {
       id: uuid(),
       name: 'Warrior Jar Shard',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Warrior+Jar+Shard',
     },
     {
       id: uuid(),
       name: 'Shard of Alexander',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Shard+of+Alexander',
     },
     {
       id: uuid(),
       name: "Alexander's Innards",
-      amount: 1,
       link: "https://eldenring.wiki.fextralife.com/Alexander's+Innards",
     },
   ],

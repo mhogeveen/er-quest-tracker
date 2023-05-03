@@ -15,13 +15,11 @@ export const latenna: Npc = {
     {
       id: uuid(),
       name: 'Latenna the Albinauric',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Latenna+the+Albinauric',
     },
     {
       id: uuid(),
       name: 'Somber Ancient Dragon Smithing Stone',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Somber+Ancient+Dragon+Smithing+Stone',
     },
   ],

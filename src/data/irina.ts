@@ -15,19 +15,16 @@ export const irina: Npc = {
     {
       id: uuid(),
       name: 'Sacrifical Twig',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Sacrificial+Twig',
     },
     {
       id: uuid(),
       name: 'Shabriri Grape',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Shabriri+Grape',
     },
     {
       id: uuid(),
       name: "Banished Knight's Halberd [+8]",
-      amount: 1,
       link: "https://eldenring.wiki.fextralife.com/Banished+Knight's+Halberd",
     },
   ],

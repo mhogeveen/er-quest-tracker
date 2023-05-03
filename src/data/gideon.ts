@@ -15,25 +15,21 @@ export const gideon: Npc = {
     {
       id: uuid(),
       name: "Fevor's Cookbook [3]",
-      amount: 1,
       link: "https://eldenring.wiki.fextralife.com/Fevor's+Cookbook+(3)",
     },
     {
       id: uuid(),
       name: "Black Flame's Protection",
-      amount: 1,
       link: "https://eldenring.wiki.fextralife.com/Black+Flame's+Protection",
     },
     {
       id: uuid(),
       name: 'Law of Causality',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Law+of+Causality',
     },
     {
       id: uuid(),
       name: "Lord's Divine Fortification",
-      amount: 1,
       link: "https://eldenring.wiki.fextralife.com/Lord's+Divine+Fortification",
     },
   ],

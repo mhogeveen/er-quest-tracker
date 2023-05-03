@@ -14,31 +14,26 @@ export const bernahl: Npc = {
     {
       id: uuid(),
       name: 'Beast Champion Set',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Beast+Champion+Set',
     },
     {
       id: uuid(),
       name: "Devourer's Scepter",
-      amount: 1,
       link: "https://eldenring.wiki.fextralife.com/Devourer's+Scepter",
     },
     {
       id: uuid(),
       name: 'Blasphemous Claw',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Blasphemous+Claw',
     },
     {
       id: uuid(),
       name: 'Raging Wolf Set',
-      amount: 1,
       link: 'https://eldenring.wiki.fextralife.com/Raging+Wolf+Set',
     },
     {
       id: uuid(),
       name: "Gelmir's Fury",
-      amount: 1,
       link: "https://eldenring.wiki.fextralife.com/Gelmir's+Fury",
     },
   ],

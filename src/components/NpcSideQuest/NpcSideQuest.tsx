@@ -130,8 +130,8 @@ const NpcSideQuestContent = ({
           <ul className={styles.list}>
             {rewards.map((reward) => (
               <li key={reward.id}>
-                {`x${reward.amount} - `}
                 <a href={reward.link} target="_blank">{`${reward.name}`}</a>
+                {!!reward.amount && ` - x${reward.amount}`}
               </li>
             ))}
           </ul>

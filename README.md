@@ -36,7 +36,7 @@ export type Npc = {
 export type Reward = {
   id: string
   name: string
-  amount: number
+  amount?: number
   link: string
 }
 
