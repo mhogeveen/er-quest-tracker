@@ -1,10 +1,11 @@
 import { Npc } from '@src/types'
 import { alexander } from './alexander'
 import { bernahl } from './bernahl'
+import { blaidd } from './blaidd'
 import { gideon } from './gideon'
 import { irina } from './irina'
 import { latenna } from './latenna'
 
-const npcs: Npc[] = [alexander, bernahl, gideon, irina, latenna]
+const npcs: Npc[] = [alexander, bernahl, blaidd, gideon, irina, latenna]
 
 export default npcs
