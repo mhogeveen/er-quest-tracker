@@ -130,7 +130,7 @@ export enum Zone {
 
 - [x] Alexander
 - [x] Bernahl
-- [ ] Blaidd
+- [x] Blaidd
 - [ ] Boc
 - [ ] Boggart
 - [ ] Corhyn
