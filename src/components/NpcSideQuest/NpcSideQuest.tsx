@@ -10,7 +10,7 @@ import styles from './NpcSideQuest.module.scss'
 import { Checkbox } from '../Checkbox'
 import { Accordion } from '../Accordion'
 import { NpcSideQuestStep } from '../NpcSideQuestStep'
-import { useNpcLocalStorage } from '@src/hooks/useLocalStorage'
+import { useNpcLocalStorage } from '@src/hooks'
 
 type NpcSideQuestProps = {
   data: Npc
@@ -140,7 +140,7 @@ const NpcSideQuestContent = ({
       {!!steps.length ? (
         <>
           <h3>Steps</h3>
-          <div>
+          <div className={styles.steps}>
             {steps.map((step) => (
               <NpcSideQuestStep
                 key={step.id}

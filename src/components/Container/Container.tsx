@@ -1,6 +1,13 @@
 import { PropsWithChildren } from 'react'
 import styles from './Container.module.scss'
+import clsx from 'clsx'
 
-export const Container = ({ children }: PropsWithChildren) => {
-  return <div className={styles.container}>{children}</div>
+type ContainerProps = PropsWithChildren<{
+  gap?: boolean
+}>
+
+export const Container = ({ children, gap }: ContainerProps) => {
+  return (
+    <div className={clsx(styles.container, gap && styles.gap)}>{children}</div>
+  )
 }

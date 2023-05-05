@@ -45,7 +45,7 @@ export enum NpcId {
   GOWRY = 'gowry',
   GURRANQ = 'gurranq',
   HYETTA = 'hyetta',
-  IRINA = ' irina',
+  IRINA = 'irina',
   JAR_BAIRN = 'jar-bairn',
   KENNETH = 'kenneth',
   LATENNA = 'latenna',

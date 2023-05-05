@@ -73,3 +73,7 @@ a[href] {
     text-decoration-style: solid;
   }
 }
+
+p + p {
+  margin-top: var(--spacing);
+}

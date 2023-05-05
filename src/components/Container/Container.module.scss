@@ -3,4 +3,10 @@
   max-width: 100ch;
   margin: 0 auto;
   padding-inline: calc(var(--spacing) * 2);
+
+  &.gap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
 }

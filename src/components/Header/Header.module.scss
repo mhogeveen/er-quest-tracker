@@ -11,7 +11,7 @@
 .wrapper {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr var(--icon-size) var(--icon-size);
+  grid-template-columns: 1fr repeat(3, var(--icon-size));
 }
 
 .link {
@@ -62,6 +62,11 @@
   &:focus-visible,
   &:active {
     outline-color: var(--grey-200);
+  }
+
+  &.active {
+    background-color: var(--cyan-50);
+    outline-color: var(--cyan-100);
   }
 }
 

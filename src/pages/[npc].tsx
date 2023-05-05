@@ -32,6 +32,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const npcData = npcs.find((npc) => npc.id === context?.params?.npc)
 
   return {
-    props: { npcData, npcsData: npcs },
+    props: { npcData },
   }
 }

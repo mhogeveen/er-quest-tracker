@@ -5,7 +5,7 @@ type NpcProgress = {
   [key: string]: boolean
 }
 
-const LOCAL_STORAGE_PREFIX = 'er-sidequest-tracker'
+const LOCAL_STORAGE_PREFIX = 'er-quest-tracker'
 
 export const useNpcLocalStorage = (npcId: NpcId) => {
   const [value, setValue] = useLocalStorageState<NpcProgress>(
