@@ -5,7 +5,7 @@ import { Checkbox } from '../Checkbox'
 import { Accordion } from '../Accordion'
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import { ReactEventHandler, useState } from 'react'
-import { useNpcLocalStorage } from '@src/hooks/useLocalStorage'
+import { useNpcLocalStorage } from '@src/hooks'
 
 type NpcSideQuestStepProps = {
   data: Step
