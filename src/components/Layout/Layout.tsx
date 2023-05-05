@@ -21,7 +21,7 @@ export const Layout = ({ children }: LayoutProps) => {
       </Head>
       <Header />
       <main className={styles.main}>
-        <Container>{children}</Container>
+        <Container gap>{children}</Container>
       </main>
       <Footer />
     </>
