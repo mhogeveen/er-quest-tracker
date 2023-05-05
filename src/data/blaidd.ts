@@ -14,7 +14,7 @@ export const blaidd: Npc = {
   rewards: [
     {
       id: uuid(),
-      name: 'Gesture: Finger Snap',
+      name: 'Gesture [Finger Snap]',
       link: 'https://eldenring.wiki.fextralife.com/Gestures',
     },
     {
