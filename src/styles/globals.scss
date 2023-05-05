@@ -66,6 +66,7 @@
 a[href] {
   outline: 0;
   text-decoration-style: dashed;
+  text-underline-offset: 2px;
 
   &:focus-visible,
   &:hover {
