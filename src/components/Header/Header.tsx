@@ -1,4 +1,8 @@
-import { HomeIcon, HamburgerMenuIcon } from '@radix-ui/react-icons'
+import {
+  HomeIcon,
+  HamburgerMenuIcon,
+  QuestionMarkIcon,
+} from '@radix-ui/react-icons'
 import styles from './Header.module.scss'
 import { Container } from '../Container'
 import Link from 'next/link'
@@ -6,7 +10,15 @@ import clsx from 'clsx'
 import npcs from '@src/data'
 import { useState, MouseEvent } from 'react'
 
-export const Header = () => {
+type HeaderProps = {
+  instructionsActive: boolean
+  onToggleInstructions: () => void
+}
+
+export const Header = ({
+  instructionsActive,
+  onToggleInstructions,
+}: HeaderProps) => {
   const [isNavOpen, setIsNavOpen] = useState(false)
 
   const toggleNav = () => setIsNavOpen((prev) => !prev)
@@ -32,6 +44,15 @@ export const Header = () => {
             >
               <HomeIcon width={20} height={20} />
             </Link>
+            <button
+              className={clsx(
+                styles.button,
+                instructionsActive && styles.active
+              )}
+              onClick={onToggleInstructions}
+            >
+              <QuestionMarkIcon width={20} height={20} />
+            </button>
             <button className={styles.button} onClick={toggleNav}>
               <HamburgerMenuIcon width={20} height={20} />
             </button>

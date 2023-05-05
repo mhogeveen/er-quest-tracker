@@ -1,13 +1,17 @@
+import Head from 'next/head'
 import { PropsWithChildren } from 'react'
+import { useLayout } from '@src/hooks'
 import styles from './Layout.module.scss'
+import { Container } from '../Container'
 import { Header } from '../Header'
 import { Footer } from '../Footer'
-import Head from 'next/head'
-import { Container } from '../Container'
+import { Notification } from '../Notification'
 
 type LayoutProps = PropsWithChildren
 
 export const Layout = ({ children }: LayoutProps) => {
+  const { showInstructions, setShowInstructions } = useLayout()
+
   return (
     <>
       <Head>
@@ -19,9 +23,22 @@ export const Layout = ({ children }: LayoutProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Header />
+      <Header
+        instructionsActive={showInstructions}
+        onToggleInstructions={() =>
+          setShowInstructions((prevValue) => !prevValue)
+        }
+      />
       <main className={styles.main}>
         <Container gap>{children}</Container>
+        <Notification
+          content={
+            "This website makes use of *local storage* to save your quest progress.\n\nLocal storage is specific to your current device. So tracking your progress should be done on the same device throughout your journey in Elden Ring.\n\nNot seeing progress you've made previously? That progress was likely saved on another device!"
+          }
+          isShown={showInstructions}
+          onClose={() => setShowInstructions(false)}
+          title="Instructions"
+        />
       </main>
       <Footer />
     </>
