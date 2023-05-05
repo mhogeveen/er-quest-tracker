@@ -86,6 +86,7 @@ export enum Zone {
   MOHGWYN_PALACE = 'Moghwyn Palace',
   MOUNT_GELMIR = 'Mount Gelmir',
   MOUNTAINTOP = 'Mountaintop of the Giants',
+  MULTIPLE = 'Multiple locations possible',
   NOKRON = 'Nokron, Eternal City',
   RAYA_LUCARIA = 'Academy of Raya Lucaria',
   ROUNDTABLE_HOLD = 'Roundtable Hold',
