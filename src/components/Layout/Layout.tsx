@@ -30,15 +30,17 @@ export const Layout = ({ children }: LayoutProps) => {
         }
       />
       <main className={styles.main}>
-        <Container gap>{children}</Container>
-        <Notification
-          content={
-            "This website makes use of *local storage* to save your quest progress.\n\nLocal storage is specific to your current device. So tracking your progress should be done on the same device throughout your journey in Elden Ring.\n\nNot seeing progress you've made previously? That progress was likely saved on another device!"
-          }
-          isShown={showInstructions}
-          onClose={() => setShowInstructions(false)}
-          title="Instructions"
-        />
+        <Container gap>
+          <Notification
+            content={
+              "This website makes use of *local storage* to save your quest progress.\n\nLocal storage is specific to your current device. So tracking your progress should be done on the same device throughout your journey in Elden Ring.\n\nNot seeing progress you've made previously? That progress was likely saved on another device!"
+            }
+            isShown={showInstructions}
+            onClose={() => setShowInstructions(false)}
+            title="Instructions"
+          />
+          {children}
+        </Container>
       </main>
       <Footer />
     </>
