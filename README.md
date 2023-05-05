@@ -131,7 +131,7 @@ export enum Zone {
 - [x] Alexander
 - [x] Bernahl
 - [x] Blaidd
-- [ ] Boc
+- [x] Boc
 - [ ] Boggart
 - [ ] Corhyn
 - [ ] D, Hunter of the Dead
