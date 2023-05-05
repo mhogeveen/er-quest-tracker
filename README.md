@@ -123,9 +123,9 @@ export enum Zone {
 - [x] Save state in LocalStorage
 - [x] Nicer styling for dropdown menu
 - [x] Favicon
+- [x] Add 'notification' to top of each page with instructions (with don't show again button)
 - [ ] Check for responsive styling
 - [ ] SEO
-- [ ] Add 'notification' to top of each page with instructions (with don't show again button)
 
 ### NPC's Data
 
