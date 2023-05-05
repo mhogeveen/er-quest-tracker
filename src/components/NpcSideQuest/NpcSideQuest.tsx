@@ -140,7 +140,7 @@ const NpcSideQuestContent = ({
       {!!steps.length ? (
         <>
           <h3>Steps</h3>
-          <div>
+          <div className={styles.steps}>
             {steps.map((step) => (
               <NpcSideQuestStep
                 key={step.id}
