@@ -37,7 +37,7 @@ export type Reward = {
   id: string
   name: string
   amount?: number
-  link: string
+  link?: string
 }
 
 export type Step = {
@@ -131,7 +131,7 @@ export enum Zone {
 - [x] Alexander
 - [x] Bernahl
 - [x] Blaidd
-- [ ] Boc
+- [x] Boc
 - [ ] Boggart
 - [ ] Corhyn
 - [ ] D, Hunter of the Dead
