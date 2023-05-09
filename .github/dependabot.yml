@@ -1,6 +1,3 @@
-# TODO: add pnpm package-ecosystem when available.
-# See https://github.com/dependabot/dependabot-core/issues/1736
-# for progress on pnpm support
 version: 2
 updates:
   - package-ecosystem: 'github-actions'
@@ -9,7 +6,7 @@ updates:
       interval: 'weekly'
     open-pull-requests-limit: 3
 
-  - package-ecosystem: 'pnpm'
+  - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'weekly'
