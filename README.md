@@ -133,7 +133,7 @@ export enum Zone {
 - [x] Bernahl
 - [x] Blaidd
 - [x] Boc
-- [ ] Boggart
+- [x] Boggart
 - [ ] Corhyn
 - [ ] D, Hunter of the Dead
 - [ ] D, Beholder of Death
