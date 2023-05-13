@@ -33,7 +33,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <Container gap>
           <Notification
             content={
-              "This website makes use of *local storage* to save your quest progress.\n\nLocal storage is specific to your current device. So tracking your progress should be done on the same device throughout your journey in Elden Ring.\n\nNot seeing progress you've made previously? That progress was likely saved on another device!"
+              "This website makes use of *local storage* to save your quest progress.\n\nLocal storage is specific to your current device. So tracking your progress should be done on the same device throughout your journey in Elden Ring.\n\nNot seeing progress you've made previously? That progress was likely saved on another device!\n\n**WARNING** Clearing your site data will delete all of your progress!"
             }
             isShown={showInstructions}
             onClose={() => setShowInstructions(false)}
