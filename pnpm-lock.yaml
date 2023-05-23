@@ -67,8 +67,8 @@ devDependencies:
     specifier: ^2.8.7
     version: 2.8.7
   react-markdown:
-    specifier: ^8.0.6
-    version: 8.0.6(@types/react@18.0.28)(react@18.2.0)
+    specifier: ^8.0.7
+    version: 8.0.7(@types/react@18.0.28)(react@18.2.0)
 
 packages:
 
@@ -3062,8 +3062,8 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react-markdown@8.0.6(@types/react@18.0.28)(react@18.2.0):
-    resolution: {integrity: sha512-KgPWsYgHuftdx510wwIzpwf+5js/iHqBR+fzxefv8Khk3mFbnioF1bmL2idHN3ler0LMQmICKeDrWnZrX9mtbQ==}
+  /react-markdown@8.0.7(@types/react@18.0.28)(react@18.2.0):
+    resolution: {integrity: sha512-bvWbzG4MtOU62XqBx3Xx+zB2raaFFsq4mYiAzfjXJMEz2sixgeAfraA3tvzULF02ZdOMUOKTBFFaZJDDrq+BJQ==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
