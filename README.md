@@ -134,7 +134,7 @@ export enum Zone {
 - [x] Blaidd
 - [x] Boc
 - [x] Boggart
-- [ ] Corhyn
+- [x] Corhyn
 - [ ] D, Hunter of the Dead
 - [ ] D, Beholder of Death
 - [ ] Diallos
