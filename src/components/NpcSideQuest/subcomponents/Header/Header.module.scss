@@ -1,11 +1,19 @@
 .header {
   display: grid;
-  grid-template-areas: 'checkbox link title image' 'description description description image';
-  grid-template-columns: var(--icon-size) var(--icon-size) 2fr 1fr;
+  grid-template-areas: 'checkbox link title' 'image image image' 'description description description';
+  grid-template-columns: var(--icon-size) var(--icon-size) 1fr;
   grid-template-rows: max-content 1fr;
+  row-gap: var(--spacing);
   border-bottom: 1px solid var(--grey-200);
   padding-bottom: var(--spacing);
   margin-bottom: var(--spacing);
+
+  @media ($sm-up) {
+    grid-template-areas: 'checkbox link title image' 'description description description image';
+    grid-template-columns: var(--icon-size) var(--icon-size) 2fr 1fr;
+    grid-template-rows: max-content 1fr;
+    row-gap: 0;
+  }
 }
 
 .checkbox {
