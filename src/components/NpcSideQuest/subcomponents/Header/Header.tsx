@@ -1,5 +1,6 @@
 import { ExternalLinkIcon } from '@radix-ui/react-icons'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Checkbox } from '@src/components'
 import { Npc } from '@src/types'
 import ReactMarkdown from 'react-markdown'
@@ -23,9 +24,9 @@ export const Header = ({
       <div className={styles.checkbox}>
         <Checkbox isChecked={isNpcComplete} onClick={toggleNpcComplete} />
       </div>
-      <a href={link} target="_blank" className={styles.link}>
+      <Link href={link} target="_blank" className={styles.link}>
         <ExternalLinkIcon width={20} height={20} />
-      </a>
+      </Link>
       <h2 className={styles.title}>{name}</h2>
       <div className={styles.description}>
         <ReactMarkdown linkTarget="_blank">{description}</ReactMarkdown>

@@ -29,6 +29,10 @@
   &:active {
     outline-color: var(--grey-200);
   }
+
+  svg {
+    pointer-events: none;
+  }
 }
 
 .chevron {

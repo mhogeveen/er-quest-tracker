@@ -7,6 +7,7 @@ import { Checkbox } from '@src/components'
 import { Npc } from '@src/types'
 import ReactMarkdown from 'react-markdown'
 import styles from './Summary.module.scss'
+import Link from 'next/link'
 
 type SummaryProps = Pick<Npc, 'description' | 'link' | 'name'> & {
   isNpcComplete: boolean
@@ -28,9 +29,9 @@ export const Summary = ({
         <Checkbox isChecked={isNpcComplete} onClick={toggleNpcComplete} />
       </div>
       <h2 className={styles.title}>{name}</h2>
-      <a href={link} target="_blank" className={styles.link}>
+      <Link href={link} target="_blank" className={styles.link}>
         <ExternalLinkIcon width={20} height={20} />
-      </a>
+      </Link>
       <div className={styles.description}>
         <ReactMarkdown linkTarget="_blank">{description}</ReactMarkdown>
       </div>
