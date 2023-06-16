@@ -1,5 +1,6 @@
-import { NpcSideQuest } from '@src/components'
+import { Content, Header } from '@src/components/NpcSideQuest/subcomponents'
 import npcs from '@src/data'
+import { useNpcLocalStorage } from '@src/hooks'
 import { Npc } from '@src/types'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
@@ -9,12 +10,26 @@ type PageProps = {
 }
 
 export default function Page({ npcData }: PageProps) {
+  const { localStorageValue, setLocalStorageTotal } = useNpcLocalStorage(
+    npcData.id
+  )
+
+  const { description, id, image, link, name, rewards, steps } = npcData
+
   return (
     <>
       <Head>
-        <title>{`${npcData.name} / Elden Ring Quest Tracker`}</title>
+        <title>{`${name} / Elden Ring Quest Tracker`}</title>
       </Head>
-      <NpcSideQuest data={npcData} isOpenByDefault={true} />
+      <Header
+        description={description}
+        isNpcComplete={!!localStorageValue?.total}
+        link={link}
+        name={name}
+        toggleNpcComplete={(state) => setLocalStorageTotal(state)}
+        image={image}
+      />
+      <Content id={id} rewards={rewards} steps={steps} />
     </>
   )
 }

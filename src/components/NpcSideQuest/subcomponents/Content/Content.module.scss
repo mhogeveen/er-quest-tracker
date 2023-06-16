@@ -1,0 +1,9 @@
+.list {
+  margin: 0;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
