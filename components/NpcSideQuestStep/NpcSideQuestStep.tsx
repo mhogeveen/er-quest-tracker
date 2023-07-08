@@ -1,3 +1,4 @@
+'use client'
 import { NpcId, Step } from '@types'
 import styles from './NpcSideQuestStep.module.scss'
 import ReactMarkdown from 'react-markdown'

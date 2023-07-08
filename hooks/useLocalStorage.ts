@@ -1,3 +1,4 @@
+'use client'
 import { NpcId } from '@types'
 import useLocalStorageState from 'use-local-storage-state'
 

@@ -1,3 +1,4 @@
+'use client'
 import { CircleIcon, CheckCircledIcon } from '@radix-ui/react-icons'
 import styles from './Checkbox.module.scss'
 import { MouseEvent } from 'react'

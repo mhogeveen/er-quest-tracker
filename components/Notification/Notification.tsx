@@ -1,3 +1,4 @@
+'use client'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import styles from './Notification.module.scss'
 import ReactMarkdown from 'react-markdown'

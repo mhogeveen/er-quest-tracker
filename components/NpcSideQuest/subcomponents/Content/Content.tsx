@@ -17,8 +17,8 @@ export const Content = ({
         <>
           <h3>Failure conditions</h3>
           <ul className={styles.list}>
-            {failureConditions.map((condition, index) => (
-              <li key={index}>
+            {failureConditions.map((condition) => (
+              <li key={condition}>
                 <ReactMarkdown linkTarget="_blank">{condition}</ReactMarkdown>
               </li>
             ))}
@@ -44,7 +44,7 @@ export const Content = ({
           <div className={styles.steps}>
             {steps.map((step) => (
               <NpcSideQuestStep
-                key={step.id}
+                key={`${id}-${step.id}`}
                 stepNumber={step.id}
                 data={step}
                 isOpenByDefault={false}

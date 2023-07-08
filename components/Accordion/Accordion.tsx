@@ -1,3 +1,4 @@
+'use client'
 import { ReactNode, SyntheticEvent } from 'react'
 import styles from './Accordion.module.scss'
 import clsx from 'clsx'
