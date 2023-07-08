@@ -5,7 +5,7 @@ module.exports = {
     domains: ['eldenring.wiki.fextralife.com'],
   },
   sassOptions: {
-    includePaths: ['./src'],
-    prependData: `@import "src/styles/variables.scss";`,
+    includePaths: ['./styles'],
+    prependData: `@import "styles/variables.scss";`,
   },
 }
