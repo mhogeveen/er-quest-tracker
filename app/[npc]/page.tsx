@@ -1,15 +1,37 @@
+'use client'
 import { Content, Header } from '@components/NpcSideQuest/subcomponents'
 import npcs from '@data'
 import { useNpcLocalStorage } from '@hooks'
-import { Npc } from '@types'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { Npc, NpcId } from '@types'
 import Head from 'next/head'
+import { notFound } from 'next/navigation'
 
 type PageProps = {
+  params: {
+    npc: NpcId
+  }
+}
+
+type BaseNpcPageProps = {
   npcData: Npc
 }
 
-export default function Page({ npcData }: PageProps) {
+export const generateStaticParams = async () =>
+  npcs.map((npc) => ({ npc: npc.id }))
+
+const getData = (npcId: NpcId) => npcs.find((npc) => npc.id === npcId)
+
+export default function NpcPage({ params }: PageProps) {
+  const npcData = getData(params.npc)
+
+  if (!npcData) {
+    return notFound()
+  }
+
+  return <BaseNpcPage npcData={npcData} />
+}
+
+const BaseNpcPage = ({ npcData }: BaseNpcPageProps) => {
   const { localStorageValue, setLocalStorageTotal } = useNpcLocalStorage(
     npcData.id
   )
@@ -46,21 +68,4 @@ export default function Page({ npcData }: PageProps) {
       />
     </>
   )
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = npcs.map((npc) => ({ params: { npc: npc.id } }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  const npcData = npcs.find((npc) => npc.id === context?.params?.npc)
-
-  return {
-    props: { npcData },
-  }
 }

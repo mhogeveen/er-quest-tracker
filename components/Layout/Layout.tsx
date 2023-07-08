@@ -1,5 +1,4 @@
 'use client'
-import Head from 'next/head'
 import { PropsWithChildren } from 'react'
 import { useLayout } from '@hooks'
 import styles from './Layout.module.scss'
@@ -15,15 +14,6 @@ export const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <Head>
-        <title>Elden Ring Quest Tracker</title>
-        <meta
-          name="description"
-          content="A tracker for your Elden Ring NPC quest progress"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
-      </Head>
       <Header
         instructionsActive={showInstructions}
         onToggleInstructions={() =>

@@ -1,3 +1,4 @@
+'use client'
 import { Npc } from '@types'
 import { useNpcLocalStorage } from '@hooks'
 import { ReactEventHandler, useState } from 'react'
