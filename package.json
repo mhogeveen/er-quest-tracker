@@ -19,7 +19,7 @@
     "@types/react": "18.2.11",
     "@types/react-dom": "18.2.4",
     "@vercel/analytics": "^1.0.1",
-    "next": "13.4.4",
+    "next": "13.4.9",
     "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
