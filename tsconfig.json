@@ -15,7 +15,16 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@src/*": ["./src/*"]
+      "@components/*": ["./components/*"],
+      "@components": ["./components"],
+      "@data/*": ["./data/*"],
+      "@data": ["./data"],
+      "@hooks/*": ["./hooks/*"],
+      "@hooks": ["./hooks"],
+      "@styles/*": ["./styles/*"],
+      "@styles": ["./styles"],
+      "@types/*": ["./types/*"],
+      "@types": ["./types"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
