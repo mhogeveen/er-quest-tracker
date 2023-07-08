@@ -1,6 +1,7 @@
 /* File Formats */
 *.hbs
 *.png
+*.ico
 
 /* Files */
 .prettierignore

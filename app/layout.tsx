@@ -14,7 +14,7 @@ export const metadata = {
   title: 'Elden Ring Quest Tracker',
   description: 'A tracker for your Elden Ring NPC quest progress',
   viewport: 'width=device-width, initial-scale=1',
-  icons: '/favicon.png',
+  icons: '/favicon.ico',
 }
 
 export default function RootLayout({
