@@ -6,3 +6,4 @@
 .prettierignore
 .gitignore
 pnpm-lock.yaml
+CODEOWNERS
