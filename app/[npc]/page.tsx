@@ -2,7 +2,7 @@ import npcs from '@data'
 import { NpcId } from '@types'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { NpcView } from '../../views/NpcView/NpcView'
+import { NpcView } from '@views/NpcView/NpcView'
 
 type PageProps = {
   params: {

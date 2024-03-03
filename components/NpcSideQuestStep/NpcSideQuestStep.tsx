@@ -3,11 +3,11 @@
 import { NpcId, Step } from '@types'
 import styles from './NpcSideQuestStep.module.scss'
 import ReactMarkdown from 'react-markdown'
-import { Checkbox } from '../Checkbox/Checkbox'
-import { Accordion } from '../Accordion/Accordion'
+import { Checkbox } from '@components/Checkbox/Checkbox'
+import { Accordion } from '@components/Accordion/Accordion'
 import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons'
 import { ReactEventHandler, useState } from 'react'
-import { useNpcLocalStorage } from '@hooks'
+import { useNpcLocalStorage } from '@hooks/useLocalStorage'
 
 type NpcSideQuestStepProps = {
   data: Step

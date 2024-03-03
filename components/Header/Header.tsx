@@ -6,21 +6,15 @@ import {
   QuestionMarkIcon,
 } from '@radix-ui/react-icons'
 import styles from './Header.module.scss'
-import { Container } from '../Container/Container'
+import { Container } from '@components/Container/Container'
 import Link from 'next/link'
 import clsx from 'clsx'
 import npcs from '@data'
 import { useState, MouseEvent } from 'react'
+import { useLayout } from '@context/LayoutContext'
 
-type HeaderProps = {
-  instructionsActive: boolean
-  onToggleInstructions: () => void
-}
-
-export const Header = ({
-  instructionsActive,
-  onToggleInstructions,
-}: HeaderProps) => {
+export const Header = () => {
+  const { showInstructions, toggleInstructions } = useLayout()
   const [isNavOpen, setIsNavOpen] = useState(false)
 
   const toggleNav = () => setIsNavOpen((prev) => !prev)
@@ -47,11 +41,8 @@ export const Header = ({
               <HomeIcon width={20} height={20} />
             </Link>
             <button
-              className={clsx(
-                styles.button,
-                instructionsActive && styles.active
-              )}
-              onClick={onToggleInstructions}
+              className={clsx(styles.button, showInstructions && styles.active)}
+              onClick={toggleInstructions}
             >
               <QuestionMarkIcon width={20} height={20} />
             </button>
