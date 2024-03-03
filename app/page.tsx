@@ -1,5 +1,5 @@
 'use client'
-import { NpcSideQuest } from '@components'
+import { NpcSideQuest } from '@components/NpcSideQuest/NpcSideQuest'
 import npcs from '@data'
 
 const Home = () => (

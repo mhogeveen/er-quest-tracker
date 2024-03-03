@@ -1,11 +1,12 @@
 'use client'
+
 import {
   HomeIcon,
   HamburgerMenuIcon,
   QuestionMarkIcon,
 } from '@radix-ui/react-icons'
 import styles from './Header.module.scss'
-import { Container } from '../Container'
+import { Container } from '../Container/Container'
 import Link from 'next/link'
 import clsx from 'clsx'
 import npcs from '@data'

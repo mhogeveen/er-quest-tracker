@@ -1,4 +1,4 @@
-import { Layout } from '@components'
+import { Layout } from '@components/Layout/Layout'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import 'normalize.css'

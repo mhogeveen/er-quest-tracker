@@ -3,8 +3,9 @@ import { Npc } from '@types'
 import { useNpcLocalStorage } from '@hooks'
 import { ReactEventHandler, useState } from 'react'
 import styles from './NpcSideQuest.module.scss'
-import { Summary, Content } from './subcomponents'
-import { Accordion } from '../Accordion'
+import { Summary } from './subcomponents/Summary/Summary'
+import { Content } from './subcomponents/Content/Content'
+import { Accordion } from '../Accordion/Accordion'
 
 type NpcSideQuestProps = {
   data: Npc

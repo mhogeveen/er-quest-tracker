@@ -1,7 +1,7 @@
 import { ExternalLinkIcon } from '@radix-ui/react-icons'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Checkbox } from '@components'
+import { Checkbox } from '@components/Checkbox/Checkbox'
 import { Npc } from '@types'
 import ReactMarkdown from 'react-markdown'
 import styles from './Header.module.scss'

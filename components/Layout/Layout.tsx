@@ -2,10 +2,10 @@
 import { PropsWithChildren } from 'react'
 import { useLayout } from '@hooks'
 import styles from './Layout.module.scss'
-import { Container } from '../Container'
-import { Header } from '../Header'
-import { Footer } from '../Footer'
-import { Notification } from '../Notification'
+import { Container } from '../Container/Container'
+import { Header } from '../Header/Header'
+import { Footer } from '../Footer/Footer'
+import { Notification } from '../Notification/Notification'
 
 type LayoutProps = PropsWithChildren
 

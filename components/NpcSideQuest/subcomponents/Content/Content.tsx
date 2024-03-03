@@ -1,4 +1,4 @@
-import { NpcSideQuestStep } from '@components'
+import { NpcSideQuestStep } from '@components/NpcSideQuestStep/NpcSideQuestStep'
 import { Npc } from '@types'
 import ReactMarkdown from 'react-markdown'
 import styles from './Content.module.scss'
