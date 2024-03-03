@@ -1,4 +1,5 @@
 'use client'
+
 import { NpcId, Step } from '@types'
 import styles from './NpcSideQuestStep.module.scss'
 import ReactMarkdown from 'react-markdown'
@@ -21,6 +22,7 @@ export const NpcSideQuestStep = ({
   npcId,
   stepNumber,
 }: NpcSideQuestStepProps) => {
+  const { note, zone, description, id, optional } = data
   const { localStorageValue, setLocalStorageStep } = useNpcLocalStorage(npcId)
   const [isOpen, setIsOpen] = useState(isOpenByDefault)
 
@@ -35,21 +37,21 @@ export const NpcSideQuestStep = ({
       classes={{
         summary: styles.summary,
       }}
-      content={<NpcSideQuestStepContent note={data.note} zone={data.zone} />}
+      content={<NpcSideQuestStepContent note={note} zone={zone} />}
       handleToggle={handleToggle}
       summary={
         <NpcSideQuestStepSummary
-          description={data.description}
+          description={description}
           isOpen={isOpen}
-          isStepComplete={!!localStorageValue?.[data.id]}
-          optional={data.optional}
+          isStepComplete={!!localStorageValue?.[id]}
+          optional={optional}
           stepNumber={stepNumber}
           toggleStepComplete={(state) =>
-            setLocalStorageStep(data.id.toString(), state)
+            setLocalStorageStep(id.toString(), state)
           }
         />
       }
-      isComplete={!!localStorageValue?.[data.id]}
+      isComplete={!!localStorageValue?.[id]}
       isOpen={isOpen}
     />
   )

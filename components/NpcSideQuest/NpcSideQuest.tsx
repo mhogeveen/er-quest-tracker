@@ -17,9 +17,9 @@ export const NpcSideQuest = ({
   data,
   isOpenByDefault = false,
 }: NpcSideQuestProps) => {
-  const { localStorageValue, setLocalStorageTotal } = useNpcLocalStorage(
-    data.id
-  )
+  const { id, failureConditions, rewards, steps, description, link, name } =
+    data
+  const { localStorageValue, setLocalStorageTotal } = useNpcLocalStorage(id)
   const [isOpen, setIsOpen] = useState(isOpenByDefault)
 
   const handleToggle: ReactEventHandler<HTMLDetailsElement> = (e) => {
@@ -35,20 +35,20 @@ export const NpcSideQuest = ({
       }}
       content={
         <Content
-          failureConditions={data.failureConditions}
-          id={data.id}
-          rewards={data.rewards}
-          steps={data.steps}
+          failureConditions={failureConditions}
+          id={id}
+          rewards={rewards}
+          steps={steps}
         />
       }
       summary={
         <Summary
-          description={data.description}
+          description={description}
           isNpcComplete={!!localStorageValue?.total}
           isOpen={isOpen}
-          link={data.link}
-          name={data.name}
-          toggleNpcComplete={(state) => setLocalStorageTotal(state)}
+          link={link}
+          name={name}
+          toggleNpcComplete={setLocalStorageTotal}
         />
       }
       handleToggle={handleToggle}
