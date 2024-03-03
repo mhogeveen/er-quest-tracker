@@ -3,7 +3,7 @@
 import { Content } from '@components/NpcSideQuest/subcomponents/Content/Content'
 import { Header } from '@components/NpcSideQuest/subcomponents/Header/Header'
 import { useNpcLocalStorage } from '@hooks/useLocalStorage'
-import { Npc } from '@types/index'
+import { Npc } from '@types'
 
 type ViewProps = {
   npcData: Npc
