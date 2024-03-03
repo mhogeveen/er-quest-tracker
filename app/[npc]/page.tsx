@@ -2,7 +2,7 @@ import npcs from '@data'
 import { NpcId } from '@types'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { View } from './view'
+import { NpcView } from '../../views/NpcView/NpcView'
 
 type PageProps = {
   params: {
@@ -16,9 +16,7 @@ export async function generateMetadata({
   const npcData = npcs.find((npc) => npc.id === params.npc)
 
   return {
-    title: npcData?.name
-      ? `${npcData.name} / Elden Ring Quest Tracker`
-      : 'Elden Ring Quest Tracker',
+    title: (npcData?.name || 'Npc') + ' / Elden Ring Quest Tracker',
   }
 }
 
@@ -32,5 +30,5 @@ export default function NpcPage({ params }: PageProps) {
     return notFound()
   }
 
-  return <View npcData={npcData} />
+  return <NpcView npcData={npcData} />
 }

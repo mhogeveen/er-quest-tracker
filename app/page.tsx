@@ -1,8 +1,6 @@
-'use client'
-import { NpcSideQuest } from '@components/NpcSideQuest/NpcSideQuest'
-import npcs from '@data'
+import { HomeView } from '../views/HomeView/HomeView'
 
-const Home = () => (
+const HomePage = () => (
   <>
     <h3 style={{ color: 'red' }}>
       This site is still under construction!
@@ -14,10 +12,8 @@ const Home = () => (
       <br />
       Sorry for the inconvenience and thank you for your patience!
     </h3>
-    {npcs.map((npc) => (
-      <NpcSideQuest key={npc.id} data={npc} isOpenByDefault={false} />
-    ))}
+    <HomeView />
   </>
 )
 
-export default Home
+export default HomePage

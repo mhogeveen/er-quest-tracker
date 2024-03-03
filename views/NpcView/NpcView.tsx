@@ -1,19 +1,12 @@
-'use client'
-
 import { Content } from '@components/NpcSideQuest/subcomponents/Content/Content'
 import { Header } from '@components/NpcSideQuest/subcomponents/Header/Header'
-import { useNpcLocalStorage } from '@hooks/useLocalStorage'
 import { Npc } from '@types'
 
 type ViewProps = {
   npcData: Npc
 }
 
-export const View = ({ npcData }: ViewProps) => {
-  const { localStorageValue, setLocalStorageTotal } = useNpcLocalStorage(
-    npcData.id
-  )
-
+export const NpcView = ({ npcData }: ViewProps) => {
   const {
     description,
     failureConditions,
@@ -29,11 +22,10 @@ export const View = ({ npcData }: ViewProps) => {
     <>
       <Header
         description={description}
-        isNpcComplete={!!localStorageValue?.total}
+        id={id}
+        image={image}
         link={link}
         name={name}
-        toggleNpcComplete={(state) => setLocalStorageTotal(state)}
-        image={image}
       />
       <Content
         failureConditions={failureConditions}
