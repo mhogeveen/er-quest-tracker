@@ -11,7 +11,7 @@ const plopConfig = (plop) => {
     actions: [
       {
         type: 'add',
-        path: 'src/data/{{camelCase id}}.ts',
+        path: 'data/{{camelCase id}}.ts',
         templateFile: 'templates/npc.hbs',
       },
     ],
