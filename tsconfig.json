@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,20 +19,42 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@components/*": ["./components/*"],
-      "@components": ["./components"],
-      "@views/*": ["./views/*"],
-      "@views": ["./views"],
-      "@data/*": ["./data/*"],
-      "@data": ["./data"],
-      "@hooks/*": ["./hooks/*"],
-      "@hooks": ["./hooks"],
-      "@context/*": ["./context/*"],
-      "@context": ["./context"],
-      "@styles/*": ["./styles/*"],
-      "@styles": ["./styles"],
-      "@types/*": ["./types/*"],
-      "@types": ["./types"]
+      "@components/*": [
+        "./components/*"
+      ],
+      "@components": [
+        "./components"
+      ],
+      "@views/*": [
+        "./views/*"
+      ],
+      "@views": [
+        "./views"
+      ],
+      "@data/*": [
+        "./data/*"
+      ],
+      "@data": [
+        "./data"
+      ],
+      "@hooks/*": [
+        "./hooks/*"
+      ],
+      "@hooks": [
+        "./hooks"
+      ],
+      "@context/*": [
+        "./context/*"
+      ],
+      "@context": [
+        "./context"
+      ],
+      "@types/*": [
+        "./types/*"
+      ],
+      "@types": [
+        "./types"
+      ]
     },
     "plugins": [
       {
@@ -36,6 +62,13 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

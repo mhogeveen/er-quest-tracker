@@ -4,8 +4,4 @@ module.exports = {
   images: {
     domains: ['eldenring.wiki.fextralife.com'],
   },
-  sassOptions: {
-    includePaths: ['./styles'],
-    prependData: `@import "styles/variables.scss";`,
-  },
 }
