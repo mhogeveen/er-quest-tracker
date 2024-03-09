@@ -1,14 +1,13 @@
-import { Layout } from '@components/Layout/Layout'
+import { Layout } from '@components/Layout'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
-import 'normalize.css'
-import '@styles/globals.scss'
+import './globals.css'
 import { Metadata } from 'next'
 
 const font = Inter({
   weight: ['400', '700'],
   subsets: ['latin'],
-  variable: '--font-family',
+  variable: '--font-sans',
 })
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={font.variable}>
-      <body>
+      <body className="flex min-h-screen flex-col">
         <Layout>
           {children}
           <Analytics />

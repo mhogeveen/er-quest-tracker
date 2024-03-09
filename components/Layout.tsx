@@ -1,9 +1,8 @@
 import { PropsWithChildren } from 'react'
-import styles from './Layout.module.scss'
-import { Container } from '@components/Container/Container'
-import { Header } from '@components/Header/Header'
-import { Footer } from '@components/Footer/Footer'
-import { Notification } from '@components/Notification/Notification'
+import { Container } from '@components/Container'
+import { Header } from '@components/Header'
+import { Footer } from '@components/Footer'
+import { Notification } from '@components/Notification'
 import { LayoutProvider } from '@context/LayoutContext'
 
 type LayoutProps = PropsWithChildren
@@ -13,7 +12,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <>
       <LayoutProvider>
         <Header />
-        <main className={styles.main}>
+        <main className="flex-grow bg-grey-50 py-2">
           <Container gap>
             <Notification
               content={

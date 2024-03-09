@@ -6,7 +6,7 @@ import { ReactEventHandler, useState } from 'react'
 import styles from './NpcSideQuest.module.scss'
 import { Summary } from './subcomponents/Summary/Summary'
 import { Content } from './subcomponents/Content/Content'
-import { Accordion } from '@components/Accordion/Accordion'
+import { Accordion } from '@components/Accordion'
 
 type NpcSideQuestProps = {
   data: Npc
